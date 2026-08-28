@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Kyndryl Signature Coral-Red & Terracotta Palette */
+  --color-brand-50: #fff2f0;
+  --color-brand-100: #ffe5e0;
+  --color-brand-200: #ffccc4;
+  --color-brand-300: #ffa699;
+  --color-brand-400: #ff7561;
+  --color-brand-500: #ff462d; /* Kyndryl Red */
+  --color-brand-600: #e0301e;
+  --color-brand-700: #ba2212;
+  --color-brand-800: #991c0e;
+  --color-brand-900: #7e190e;
+  --color-brand-950: #470802;
+
+  --color-accent-amber: #f1c21b;
+  --color-accent-emerald: #24a148;
+  --color-accent-cyan: #1192e8;
+
+  /* Kyndryl IBM Plex Typography System */
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-serif: "IBM Plex Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #161616;
+}
+
+html.dark body {
+  background-color: #121212;
+  color: #f4f4f4;
+}
+
+/* Kyndryl-style mono kicker badge */
+.kicker-mono {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Precision enterprise card styling (clean crisp lines) */
+.clean-card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.clean-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.08);
+}
+
+html.dark .clean-card:hover {
+  box-shadow: 0 16px 32px -12px rgba(255, 70, 45, 0.08);
+}
+
+
+
