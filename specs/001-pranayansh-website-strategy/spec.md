@@ -43,6 +43,13 @@
 - Q: Do the lead-capture forms (Get a Quote, Contact, Careers) need a privacy policy page and an explicit consent checkbox for handling visitor personal data? → A: Yes — add a dedicated Privacy Policy page and require an explicit consent checkbox on all three lead-capture forms before submission.
 - Q: When a visitor clicks a specific engagement model's CTA on the Services page, should it lead to one shared Get a Quote form pre-filled with that service type, or a separate form/page per engagement model? → A: One shared Get a Quote form/page, pre-filled or pre-selected with the chosen engagement model when reached via a specific CTA.
 
+### Session 2026-08-28
+
+- Q: Should the five named "target industries" be treated as business verticals or delivery capabilities? → A: Treat Software Development, Cloud & DevOps, Data & AI, QA & Testing, and Mobile Applications as capability areas. The Industries page may use that label and must map each area to relevant engagement models and technologies.
+- Q: How should visitors express interest in an emerging service that is not yet fully bookable? → A: Show the service as an emerging/growing capability and route its "Register Interest" CTA to the shared Contact form with the capability pre-selected in the inquiry context.
+- Q: Do resource articles require individual routes? → A: No. The Resources page is an SEO-structured index for this feature; each article record must still render a unique heading/title and description. Individual article routes may be added later without changing the content contract.
+- Q: Which privacy/compliance posture should the website follow for visitor-submitted data? → A: Use a general US commercial privacy posture with clear collection/use disclosure, no sale of personal data, and retention only as long as needed to respond to inquiries.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Prospective Client Requests Staffing Quote (Priority: P1)
@@ -109,8 +116,8 @@ An investor, partner, or cautious enterprise buyer visits the About page and sup
 - **FR-001**: Website MUST present a refined sitemap consisting of: Home, Services (with three engagement models), Industries, About, Careers/Join Our Network, Case Studies/Testimonials, Resources/Blog, Get a Quote, Contact, FAQ, and a Privacy Policy page (linked from the footer on every page).
 - **FR-002**: Home page MUST communicate the value proposition, tagline ("Flexible IT Staffing Solutions for Modern Businesses"), primary USPs, and a primary CTA above the fold.
 - **FR-003**: Services page MUST describe all three engagement models (Dedicated Crew, On-Demand Resources, Pay-Per-Hour Experts) with what each is, ideal use case, and a CTA that opens the shared Get a Quote form with that engagement model pre-selected.
-- **FR-004**: Services page MUST list current technology expertise (.NET, Java, Python, React, Angular, Node.js, Azure, AWS, DevOps) and target industries (Software Development, Cloud & DevOps, Data & AI, QA & Testing, Mobile Applications).
-- **FR-005**: Website MUST include an Industries page (or section) mapping target industries to relevant engagement models and technology expertise.
+- **FR-004**: Services page MUST list current technology expertise (.NET, Java, Python, React, Angular, Node.js, Azure, AWS, DevOps) and target capability areas (Software Development, Cloud & DevOps, Data & AI, QA & Testing, Mobile Applications).
+- **FR-005**: Website MUST include an Industries page (or section) mapping each target capability area to relevant engagement models and technology expertise.
 - **FR-006**: About page MUST present mission, vision, and core values (Integrity, Innovation, Customer Success, Agility, Excellence) along with company positioning narrative.
 - **FR-007**: Website MUST include a Careers/Join Our Network page allowing technology professionals to express interest, view supported technologies, and understand engagement types available to them.
 - **FR-008**: Website MUST include a single shared Get a Quote page/form capturing at minimum: name, company, email, phone (optional), service/engagement type (pre-selected when reached via a Services page CTA, otherwise selectable), technology need, and project timeframe, and MUST confirm successful submission to the visitor.
@@ -119,12 +126,12 @@ An investor, partner, or cautious enterprise buyer visits the About page and sup
 - **FR-011**: Website MUST include a Resources/Blog section structured for SEO (unique titles, descriptions, and headings per article) to support organic lead generation.
 - **FR-012**: Website MUST include an FAQ section addressing common staffing questions (engagement models, billing, onboarding time, technology coverage).
 - **FR-013**: Every page MUST include a clear, consistent call-to-action driving visitors toward "Get a Quote" or "Join Our Network" depending on audience.
-- **FR-014**: Website MUST present future/emerging services (Software Development, Mobile App Development, AI & Data Solutions, Cloud Consulting, Managed Services, DevOps Services) as clearly labeled growing capabilities, each with a "register interest" path, distinct from the core staffing offerings.
+- **FR-014**: Website MUST present future/emerging services (Software Development, Mobile App Development, AI & Data Solutions, Cloud Consulting, Managed Services, DevOps Services) as clearly labeled growing capabilities, each with a "register interest" path to the shared Contact form carrying the selected capability, distinct from the core staffing offerings.
 - **FR-015**: Website MUST expose consistent primary navigation across all pages including at minimum Home, Services, Industries, About, Careers, Contact, and Get a Quote.
 - **FR-016**: All pages MUST be fully usable and readable on mobile, tablet, and desktop viewports without loss of functionality or horizontal scrolling.
 - **FR-017**: Each page MUST have a unique, descriptive title and meta description suitable for search engines, reflecting that page's specific topic (not a repeated site-wide default).
 - **FR-018**: Website MUST present trust-building elements (core values, technology depth, industry focus, team/founder expertise) consistently across Home, About, and Services pages.
-- **FR-019**: Website MUST include a Privacy Policy page describing how visitor personal data (from Get a Quote, Contact, and Careers submissions) is collected and used.
+- **FR-019**: Website MUST include a Privacy Policy page describing how visitor personal data (from Get a Quote, Contact, and Careers submissions) is collected and used under a general US commercial privacy posture. The policy MUST state that personal data is not sold and is retained only as long as needed to respond to inquiries.
 - **FR-020**: Each of the Get a Quote, Contact, and Careers/Join Our Network forms MUST require the visitor to check an explicit consent checkbox (linking to the Privacy Policy) before the form can be submitted.
 
 ### Key Entities *(include if feature involves data)*
@@ -132,7 +139,7 @@ An investor, partner, or cautious enterprise buyer visits the About page and sup
 <!-- Entities below are structured content records maintained in local repo data files (JSON/TS), not database-backed records; see Clarifications. -->
 
 - **Service Offering**: A staffing engagement model (Dedicated Crew, On-Demand Resources, Pay-Per-Hour Experts) or an emerging service (Software Development, Mobile App Development, AI & Data Solutions, Cloud Consulting, Managed Services, DevOps Services); has a name, description, ideal use case, and status (core vs. emerging).
-- **Industry**: A target industry vertical (Software Development, Cloud & DevOps, Data & AI, QA & Testing, Mobile Applications) linked to relevant service offerings and technologies.
+- **Industry**: A target capability area (Software Development, Cloud & DevOps, Data & AI, QA & Testing, Mobile Applications) linked to relevant service offerings and technologies.
 - **Technology**: A named technology skill area (.NET, Java, Python, React, Angular, Node.js, Azure, AWS, DevOps) associated with service offerings and careers content.
 - **Quote Request**: A lead submitted via the Get a Quote form; includes contact details, requested service/engagement type, technology need, and timeframe.
 - **Contact Inquiry**: A general inquiry submitted via the Contact page; includes contact details and message.
@@ -144,8 +151,8 @@ An investor, partner, or cautious enterprise buyer visits the About page and sup
 
 ### Measurable Outcomes
 
-- **SC-001**: A first-time visitor can locate and open the "Get a Quote" form from any page within 2 clicks.
-- **SC-002**: A visitor can identify which of the three engagement models fits their need after reading the Services page, without needing to contact support first, in under 3 minutes.
+- **SC-001**: A first-time visitor can locate and open the "Get a Quote" form from any page within 2 clicks, verified by timing a representative deep-page journey and recording the click count.
+- **SC-002**: A visitor can identify which of the three engagement models fits their need after reading the Services page, without needing to contact support first, in under 3 minutes, verified with a timed manual walkthrough.
 - **SC-003**: 100% of pages remain fully functional and readable on mobile, tablet, and desktop viewports with no horizontal scrolling or hidden navigation.
 - **SC-004**: 100% of pages have a unique page title and meta description distinct from every other page on the site.
 - **SC-005**: A technology professional can find and submit the Careers/Join Our Network interest form within 2 clicks from Home.
@@ -157,7 +164,8 @@ An investor, partner, or cautious enterprise buyer visits the About page and sup
 - The business positioning decision is **Option B (phased)**: staffing remains the primary offering now, with software development, AI/data, cloud, and managed/DevOps services introduced as clearly labeled "emerging capabilities" rather than full parallel service lines from launch.
 - Real client case studies and testimonials are not yet available; initial content will use honest, verifiable placeholder credibility statements (technology depth, engagement flexibility, founder/team expertise) and will be replaced with real client stories as they become available — this is a content operations task, not a one-time build requirement.
 - Lead routing (where Get a Quote / Contact / Careers submissions are delivered, e.g., email inbox or CRM) is an implementation detail to be decided during planning, not a business requirement of this spec.
+- Privacy posture at launch is general US commercial privacy: the site discloses collection and use, does not sell personal data, and retains submissions only as long as needed to respond to inquiries. Jurisdiction-specific regimes such as GDPR and India-specific requirements are out of scope unless the business later targets those audiences.
 - Pricing is engagement-dependent and not published as fixed rate cards at launch; the FAQ and Services pages will direct pricing questions to the Get a Quote flow rather than listing fixed prices.
 - The existing five current pages (Home, Services, About, Contact, Get a Quote) are retained and extended with the additional recommended pages (Industries, Careers, Case Studies/Testimonials, Resources/Blog, FAQ) rather than replaced.
 - This specification covers website content, structure, and business positioning only; visual design system, component library choice, and hosting/deployment are addressed in the implementation plan, not this spec.
-- Content for Service Offerings, Industries, Technologies, Case Studies/Testimonials, and Resource Articles is maintained in structured local data files (e.g., JSON/TS) within the repository rather than a CMS or database; updates require a code change and redeploy, not a non-developer editing workflow.
+- Content for Service Offerings, capability areas, Technologies, Case Studies/Testimonials, and Resource Articles is maintained in structured local data files (e.g., JSON/TS) within the repository rather than a CMS or database; updates require a code change and redeploy, not a non-developer editing workflow. Resource Articles are indexed on the Resources page in this feature; individual article routes are deferred.

@@ -8,7 +8,7 @@
 
 ## Summary
 
-Rebuild Pranayansh Technologies' marketing site as an 11-page React + Tailwind CSS single-page application (Home, Services, Industries, About, Careers/Join Our Network, Case Studies/Testimonials, Resources/Blog, Get a Quote, Contact, FAQ, Privacy Policy) that leads with the three core staffing engagement models, presents emerging services (Software Development, Mobile, AI/Data, Cloud, Managed/DevOps) as clearly labeled growing capabilities, and drives visitors toward a shared, pre-selectable "Get a Quote" form. Content (services, industries, technologies, case studies, resource articles, FAQ) is stored in typed local TypeScript data files rather than a CMS. Lead-capture forms (Quote, Contact, Careers) post to an external hosted form endpoint and require explicit consent per the Privacy Policy. The existing Vite + TypeScript toolchain is retained; React 19 and Tailwind CSS v4 are added as the UI/styling layer. No automated tests are added, per the constitution's non-negotiable No Automated Testing principle — verification relies on build success, type checking, and manual review.
+Rebuild Pranayansh Technologies' marketing site as an 11-page React + Tailwind CSS single-page application (Home, Services, Industries, About, Careers/Join Our Network, Case Studies/Testimonials, Resources/Blog, Get a Quote, Contact, FAQ, Privacy Policy) that leads with the three core staffing engagement models, presents emerging services (Software Development, Mobile, AI/Data, Cloud, Managed/DevOps) as clearly labeled growing capabilities with Contact-form interest routing, and drives visitors toward a shared, pre-selectable "Get a Quote" form. Content (services, capability areas, technologies, case studies, resource articles, FAQ) is stored in typed local TypeScript data files rather than a CMS. Lead-capture forms (Quote, Contact, Careers) post to an external hosted form endpoint and require explicit consent per the Privacy Policy. The existing Vite + TypeScript toolchain is retained; React 19 and Tailwind CSS v4 are added as the UI/styling layer. No automated tests are added, per the constitution's non-negotiable No Automated Testing principle — verification relies on build success, type checking, and explicit manual checks mapped to each requirement.
 
 ## Technical Context
 
@@ -24,7 +24,7 @@ Rebuild Pranayansh Technologies' marketing site as an 11-page React + Tailwind C
 
 **Project Type**: Web (frontend-only single-page application; no custom backend service — lead-capture forms submit to an external hosted form endpoint, see research.md).
 
-**Performance Goals**: Fast initial load suitable for SEO and bounce-rate sensitivity (target Largest Contentful Paint under ~2.5s on a typical broadband/4G connection); no heavy client-side data fetching since content is bundled at build time.
+**Performance Goals**: Fast initial load suitable for SEO and bounce-rate sensitivity (target Largest Contentful Paint under ~2.5s on a typical broadband/4G connection); no heavy client-side data fetching since content is bundled at build time. Manual verification uses browser DevTools Lighthouse or Performance at desktop and mobile presets; results are recorded with the final validation notes.
 
 **Constraints**: MUST build successfully via the existing `npm run build` (`tsc && vite build`) before merge; MUST remain fully responsive with no horizontal scrolling at mobile/tablet/desktop breakpoints; MUST NOT introduce automated tests or test tooling; MUST keep dependency count minimal (each new package must close a clear capability gap per constitution principle IV).
 
@@ -41,12 +41,13 @@ Rebuild Pranayansh Technologies' marketing site as an 11-page React + Tailwind C
 | III. Responsive Design | Tailwind responsive utilities (`sm:`/`md:`/`lg:`) used for every page; layouts use relative sizing | PASS — verification step included in quickstart.md |
 | IV. Minimal Dependencies | Only React, react-dom, react-router-dom, and Tailwind CSS (+ its Vite plugin) are added; each closes a clear gap (UI library, routing across 11 pages, styling); no form library, CMS, or CSS-in-JS added | PASS — see research.md Decision log for justification of each addition |
 | V. No Automated Testing (NON-NEGOTIABLE) | No test files, runners, or frameworks are part of this plan's structure or task scope | PASS — explicitly excluded from Project Structure below |
+| VI. Requirement Traceability and Verifiable Delivery | Every requirement and success criterion has implementation tasks plus an explicit manual or build verification step | PASS — mapped in tasks.md and quickstart.md |
 
 No violations identified; Complexity Tracking table is not needed.
 
 ### Post-Design Re-check (after Phase 1)
 
-Data model ([data-model.md](./data-model.md)) and contracts ([contracts/](./contracts/)) introduce no database, no backend service, no additional dependencies beyond those already listed in Technical Context, and no test files. All content entities remain typed local data modules; the only external integration (form submission) is a client-to-hosted-endpoint HTTP contract with no server code added to this repository. All five principles remain PASS with no new violations.
+Data model ([data-model.md](./data-model.md)) and contracts ([contracts/](./contracts/)) introduce no database, no backend service, no additional dependencies beyond those already listed in Technical Context, and no test files. All content entities remain typed local data modules; the only external integration (form submission) is a client-to-hosted-endpoint HTTP contract with no server code added to this repository. All six principles remain PASS with no new violations. The final manual checklist explicitly verifies emerging-service routing, Privacy Policy metadata, CTA coverage, two-click navigation, timed model selection, responsive behavior, and LCP.
 
 ## Project Structure
 

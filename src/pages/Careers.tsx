@@ -1,5 +1,6 @@
 import { useState, useMemo, useRef } from "react";
 import { PageMeta } from "../components/layout/PageMeta";
+import { CtaBanner } from "../components/cta/CtaBanner";
 import { ConsentCheckbox } from "../components/forms/ConsentCheckbox";
 import { technologies } from "../data/technologies";
 import { jobListings, type JobListing } from "../data/jobs";
@@ -581,6 +582,14 @@ export default function Careers() {
             )}
           </div>
         </div>
+
+        <CtaBanner
+          heading="Need a delivery team instead?"
+          body="Talk with us about a dedicated engineering pod for your next product milestone."
+          ctaLabel="Get a Quote"
+          to="/get-a-quote"
+          secondaryLabel="Contact Us"
+        />
       </div>
     </>
   );

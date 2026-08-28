@@ -21,7 +21,7 @@ export const services: ServiceOffering[];
 ```
 
 - MUST contain exactly the three `status: "core"` records (Dedicated Crew, On-Demand Resources, Pay-Per-Hour Experts) required by FR-003.
-- MUST contain the six `status: "emerging"` records required by FR-014 (Software Development, Mobile App Development, AI & Data Solutions, Cloud Consulting, Managed Services, DevOps Services).
+- MUST contain the six `status: "emerging"` records required by FR-014 (Software Development, Mobile App Development, AI & Data Solutions, Cloud Consulting, Managed Services, DevOps Services). Each emerging record's CTA MUST route to the shared Contact form with that service id carried in the inquiry context.
 - Every `id` MUST be unique.
 
 ## `src/data/industries.ts`
@@ -38,7 +38,7 @@ export interface Industry {
 export const industries: Industry[];
 ```
 
-- MUST contain the five target industries from FR-004/FR-005 (Software Development, Cloud & DevOps, Data & AI, QA & Testing, Mobile Applications).
+- MUST contain the five target capability areas from FR-004/FR-005 (Software Development, Cloud & DevOps, Data & AI, QA & Testing, Mobile Applications).
 - Every id in `relatedServiceIds`/`relatedTechnologyIds` MUST correspond to an existing record in `services.ts`/`technologies.ts`.
 
 ## `src/data/technologies.ts`

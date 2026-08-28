@@ -9,7 +9,7 @@ description: "Task list for feature implementation"
 
 **Prerequisites**: [plan.md](./plan.md), [spec.md](./spec.md), [research.md](./research.md), [data-model.md](./data-model.md), [contracts/](./contracts/), [quickstart.md](./quickstart.md)
 
-**Tests**: Not included. Constitution v2.0.0 principle V (No Automated Testing, NON-NEGOTIABLE) forbids unit, integration, and end-to-end tests; the sole verification gates are `npm run build` (type checking) and the manual [quickstart.md](./quickstart.md) walkthrough.
+**Tests**: Not included. Constitution v2.1.0 principle V (No Automated Testing, NON-NEGOTIABLE) forbids unit, integration, and end-to-end tests; verification uses `npm run build` (type checking) and the manual [quickstart.md](./quickstart.md) walkthrough. Every requirement and success criterion is mapped to implementation and verification tasks under constitution principle VI.
 
 **Organization**: Tasks are grouped by user story (from spec.md) to enable independent implementation and testing of each story.
 
@@ -48,13 +48,13 @@ Single Vite + React + TypeScript project at the repository root (per plan.md Str
 - [X] T006 [P] Create `src/types/content.ts` with the shared entity interfaces (`ServiceOffering`, `Industry`, `Technology`, `QuoteRequest`, `ContactInquiry`, `CandidateInterestSubmission`, `CaseStudy`, `ResourceArticle`, `FaqEntry`) per data-model.md
 - [X] T007 [P] Create `src/data/technologies.ts` with the 9 technology records (.NET, Java, Python, React, Angular, Node.js, Azure, AWS, DevOps) per contracts/content-data-contract.md (depends on T006)
 - [X] T008 [P] Create `src/data/services.ts` with the 3 core engagement models (Dedicated Crew, On-Demand Resources, Pay-Per-Hour Experts) and 6 emerging services (Software Development, Mobile App Development, AI & Data Solutions, Cloud Consulting, Managed Services, DevOps Services) per contracts/content-data-contract.md (depends on T006)
-- [X] T009 [P] Create `src/data/industries.ts` with the 5 target industries, each referencing related service and technology ids per contracts/content-data-contract.md (depends on T006, T007, T008)
+- [X] T009 Create `src/data/industries.ts` with the 5 target capability areas, each referencing related service and technology ids per contracts/content-data-contract.md (depends on T006, T007, T008)
 - [X] T010 [P] Create `src/lib/submitForm.ts` implementing the POST contract in contracts/form-submission-contract.md (formType discriminator, `fetch`, success/error response handling) (depends on T006)
 - [X] T011 [P] Create `src/components/forms/ConsentCheckbox.tsx`, a reusable required consent checkbox linking to the `/privacy-policy` route (FR-020)
 - [X] T012 [P] Create `src/components/layout/PageMeta.tsx` that sets `document.title` and the meta description tag on mount (research.md §3, FR-017)
 - [X] T013 [P] Create `src/components/layout/Navbar.tsx` with primary navigation (Home, Services, Industries, About, Careers, Contact, Get a Quote) per FR-015
 - [X] T014 [P] Create `src/components/layout/Footer.tsx` with secondary navigation (Case Studies, Resources, FAQ) and a Privacy Policy link on every page per FR-001
-- [X] T015 Create `src/pages/PrivacyPolicy.tsx` describing how Get a Quote/Contact/Careers data is collected and used (FR-019) (depends on T012)
+- [X] T015 Create `src/pages/PrivacyPolicy.tsx` describing how Get a Quote/Contact/Careers data is collected and used under the general US commercial privacy posture, including no sale of personal data and retention only as long as needed to respond (FR-019) (depends on T012)
 - [X] T016 Create `src/App.tsx` with `react-router-dom` routes for all 11 pages (Home, Services, Industries, About, Careers, CaseStudies, Resources, GetAQuote, Contact, Faq, PrivacyPolicy) wrapped in a shared layout (Navbar + Footer) (depends on T013, T014, T015)
 - [X] T017 Create `src/main.tsx` mounting `<App />` inside `<BrowserRouter>` and update `index.html`'s script tag to load `/src/main.tsx` (depends on T016, T002)
 - [X] T018 Remove the now-superseded `src/main.ts` and `src/counter.ts` vanilla entry files (depends on T017)
@@ -71,11 +71,11 @@ Single Vite + React + TypeScript project at the repository root (per plan.md Str
 
 - [X] T019 [P] [US1] Create `src/pages/Home.tsx` with the value proposition, tagline ("Flexible IT Staffing Solutions for Modern Businesses"), primary USPs, and a primary CTA linking to Get a Quote above the fold (FR-002)
 - [X] T020 [P] [US1] Create `src/components/cards/ServiceCard.tsx` rendering a `ServiceOffering` (name, tagline, description, ideal-for, CTA)
-- [X] T021 [US1] Create `src/pages/Services.tsx` listing the 3 core engagement models via `ServiceCard`, a comparison element to help visitors self-select, and the technology/industry lists from `src/data/technologies.ts` and `src/data/industries.ts` (FR-003, FR-004) (depends on T020, T008, T007, T009)
+- [X] T021 [US1] Create `src/pages/Services.tsx` listing the 3 core engagement models via `ServiceCard`, a comparison element to help visitors self-select, and the technology/capability-area lists from `src/data/technologies.ts` and `src/data/industries.ts` (FR-003, FR-004) (depends on T020, T008, T007, T009)
 - [X] T022 [US1] Create `src/pages/GetAQuote.tsx` with the Quote Request form (name, company, email, phone, service/engagement type, technology need, timeframe, `ConsentCheckbox`), reading a pre-selected `serviceId` from route/query state, and submitting via `src/lib/submitForm.ts` with pending/success/error UI (FR-008) (depends on T010, T011, T008)
-- [X] T023 [US1] Add inline field validation to the Get a Quote form (required fields, email format check, consent required before submit) per contracts/form-submission-contract.md (depends on T022)
-- [X] T024 [US1] Wire each Services page engagement-model CTA to open Get a Quote with that model pre-selected, and wire the Home page primary CTA to Get a Quote (depends on T019, T021, T022)
-- [X] T025 [US1] Add unique SEO title and meta description to Home, Services, and Get a Quote pages via `PageMeta` (FR-017) (depends on T019, T021, T022, T012)
+- [X] T023 [US1] Add inline field validation to the Get a Quote form in `src/pages/GetAQuote.tsx` (required fields, email format check, consent required before submit) per contracts/form-submission-contract.md (depends on T022)
+- [X] T024 [US1] Wire engagement-model CTAs in `src/pages/Services.tsx` to open `src/pages/GetAQuote.tsx` with the model pre-selected, and wire the primary CTA in `src/pages/Home.tsx` to Get a Quote (depends on T019, T021, T022)
+- [X] T025 [US1] Add unique SEO title and meta description via `src/components/layout/PageMeta.tsx` to `src/pages/Home.tsx`, `src/pages/Services.tsx`, and `src/pages/GetAQuote.tsx` (FR-017) (depends on T019, T021, T022, T012)
 
 **Checkpoint**: User Story 1 is fully functional and independently testable (Home → Services → Get a Quote, submit, confirm)
 
@@ -89,8 +89,8 @@ Single Vite + React + TypeScript project at the repository root (per plan.md Str
 
 - [X] T026 [P] [US2] Create `src/pages/Careers.tsx` listing supported technologies (`src/data/technologies.ts`) and available engagement types (`src/data/services.ts`, core records) (FR-007) (depends on T007, T008)
 - [X] T027 [US2] Add the candidate interest form to `Careers.tsx` (name, email, technology background multi-select, preferred engagement type, `ConsentCheckbox`), submitting via `src/lib/submitForm.ts` (depends on T026, T010, T011)
-- [X] T028 [US2] Add inline validation to the career interest form (required fields, email format, at least one technology selected, consent required) (depends on T027)
-- [X] T029 [US2] Add unique SEO title and meta description to the Careers page via `PageMeta` (FR-017) (depends on T026, T012)
+- [X] T028 [US2] Add inline validation to the career interest form in `src/pages/Careers.tsx` (required fields, email format, at least one technology selected, consent required) (depends on T027)
+- [X] T029 [US2] Add unique SEO title and meta description via `src/components/layout/PageMeta.tsx` to `src/pages/Careers.tsx` (FR-017) (depends on T026, T012)
 
 **Checkpoint**: User Stories 1 and 2 both work independently
 
@@ -103,12 +103,12 @@ Single Vite + React + TypeScript project at the repository root (per plan.md Str
 **Independent Test**: Navigate to About, Industries, and Case Studies independently of submitting any form, and confirm mission/vision/values/industries are presented and testimonial content is honest (no fabricated metrics where marked as placeholder).
 
 - [X] T030 [P] [US3] Create `src/pages/About.tsx` presenting mission, vision, core values (Integrity, Innovation, Customer Success, Agility, Excellence), and company positioning narrative (FR-006)
-- [X] T031 [P] [US3] Create `src/pages/Industries.tsx` mapping the 5 target industries to related service offerings and technologies (FR-005) (depends on T009)
+- [X] T031 [US3] Create `src/pages/Industries.tsx` mapping the 5 target capability areas to related service offerings and technologies (FR-005) (depends on T009)
 - [X] T032 [P] [US3] Create `src/components/cards/TestimonialCard.tsx` rendering a `CaseStudy` record, clearly indicating placeholder status without fabricated metrics
 - [X] T033 [US3] Create `src/data/caseStudies.ts` with honest placeholder case studies per contracts/content-data-contract.md (depends on T006)
 - [X] T034 [US3] Create `src/pages/CaseStudies.tsx` rendering the case studies via `TestimonialCard` (depends on T032, T033)
-- [X] T035 [US3] Review and align trust-building elements (core values, technology depth, industry focus) so they appear consistently across Home, About, and Services pages (FR-018) (depends on T019, T021, T030)
-- [X] T036 [US3] Add unique SEO title and meta description to About, Industries, and Case Studies pages via `PageMeta` (FR-017) (depends on T030, T031, T034, T012)
+- [X] T035 [US3] Review and align trust-building elements in `src/pages/Home.tsx`, `src/pages/About.tsx`, and `src/pages/Services.tsx` (core values, technology depth, industry focus) (FR-018) (depends on T019, T021, T030)
+- [X] T036 [US3] Add unique SEO title and meta description via `src/components/layout/PageMeta.tsx` to `src/pages/About.tsx`, `src/pages/Industries.tsx`, and `src/pages/CaseStudies.tsx` (FR-017) (depends on T030, T031, T034, T012)
 
 **Checkpoint**: All three user stories are independently functional
 
@@ -116,18 +116,22 @@ Single Vite + React + TypeScript project at the repository root (per plan.md Str
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-**Purpose**: Remaining sitemap pages (not tied to a single prioritized story) and final verification across the whole site
+**Purpose**: Remaining sitemap pages, emerging-service follow-up, and final verification across the whole site
 
 - [X] T037 [P] Create `src/pages/Contact.tsx` with a general inquiry form (name, email, message, `ConsentCheckbox`) separate from Get a Quote, submitting via `src/lib/submitForm.ts` (FR-009) (depends on T010, T011)
 - [X] T038 [P] Create `src/data/resourceArticles.ts` with initial articles, each with a unique title and meta description (FR-011, FR-017) (depends on T006)
 - [X] T039 [P] Create `src/data/faq.ts` covering all four topics (engagement-models, billing, onboarding, technology) (FR-012) (depends on T006)
 - [X] T040 Create `src/pages/Resources.tsx` listing resource articles (FR-011) (depends on T038)
 - [X] T041 Create `src/pages/Faq.tsx` grouping FAQ entries by topic (FR-012) (depends on T039)
-- [X] T042 Add unique SEO title and meta description to Contact, Resources, and FAQ pages via `PageMeta` (FR-017) (depends on T037, T040, T041, T012)
+- [X] T042 Add unique SEO title and meta description via `src/components/layout/PageMeta.tsx` to `src/pages/Contact.tsx`, `src/pages/Resources.tsx`, and `src/pages/Faq.tsx` (FR-017) (depends on T037, T040, T041, T012)
 - [X] T043 [P] Create `public/robots.txt` and `public/sitemap.xml` listing all 11 routes for search-engine crawling
-- [X] T044 Review pass across all 11 pages to confirm each presents at least one clear call-to-action (FR-013, SC-006)
-- [X] T045 Run `npm run build` and confirm the production build succeeds with zero TypeScript errors (sole automated verification gate per constitution v2.0.0)
-- [X] T046 Execute all 10 scenarios in quickstart.md manually, including responsive breakpoint checks (FR-016, SC-003) and a full SEO title/meta-description uniqueness review across all 11 pages (SC-004)
+- [X] T044 [US1] Render all emerging service records on `src/pages/Services.tsx` in a visually distinct growing-capabilities section with Register Interest CTAs (FR-014) (depends on T008, T021)
+- [X] T045 [US1] Route each emerging-service Register Interest CTA from `src/pages/Services.tsx` to `src/pages/Contact.tsx` with the selected service id in the inquiry context (FR-014) (depends on T037, T044)
+- [X] T046 Add a unique SEO title and meta description to `src/pages/PrivacyPolicy.tsx` via `PageMeta` and include it in the all-page uniqueness review (FR-017, SC-004) (depends on T015, T012)
+- [X] T047 Run browser DevTools Lighthouse or Performance checks on Home and Services at desktop and mobile presets, record LCP results and any remaining bottleneck in `specs/001-pranayansh-website-strategy/quickstart.md` (plan performance goal; local Chromium emitted no LCP entry, so load timings and the limitation are recorded)
+- [X] T048 Review all 11 page components under `src/pages/` to confirm each presents at least one clear, audience-appropriate call-to-action, including FAQ, Resources, and Privacy Policy (FR-013, SC-006) (depends on T044, T045, T046)
+- [X] T049 Run the `npm run build` script from `package.json` at the repository root and confirm the production build succeeds with zero TypeScript errors (sole automated verification gate per constitution v2.1.0) (depends on T044, T045, T046)
+- [X] T050 Execute all 11 scenarios in quickstart.md manually, including two-click Quote and Careers navigation, timed model selection, responsive breakpoint checks (FR-016, SC-001, SC-002, SC-003, SC-005), CTA coverage (FR-013, SC-006), privacy/consent checks (FR-019, FR-020), and a full SEO title/meta-description uniqueness review across all 11 pages (SC-004) (depends on T047, T048, T049; evidence recorded above)
 
 ---
 
@@ -156,10 +160,10 @@ Single Vite + React + TypeScript project at the repository root (per plan.md Str
 ### Parallel Opportunities
 
 - Setup: T003, T004, T005 can run in parallel after T001-T002
-- Foundational: T006 first, then T007-T014 in parallel, then T015 → T016 → T017 → T018 sequentially
+- Foundational: T006 first, then T007, T008, and T010-T014 in parallel; run T009 after T007/T008, then T015 → T016 → T017 → T018 sequentially
 - Once Foundational completes, US1, US2, and US3 can be worked on in parallel by different developers
 - Within US1: T019 and T020 in parallel; within US3: T030, T031, T032 in parallel
-- Polish: T037, T038, T039, T043 can run in parallel
+- Polish: T037, T038, T039, and T043 can run in parallel; T040-T042 follow T038/T039, T044-T046 follow the existing page work, and T047-T050 are final validation tasks
 
 ---
 
@@ -220,6 +224,6 @@ With multiple developers:
 
 - [P] tasks = different files, no dependency on an incomplete task
 - [Story] label maps task to US1/US2/US3 for traceability
-- No test tasks are included anywhere in this list — constitution v2.0.0 principle V (No Automated Testing) is NON-NEGOTIABLE and supersedes any default that would otherwise add them
+- No test tasks are included anywhere in this list — constitution v2.1.0 principle V (No Automated Testing) is NON-NEGOTIABLE and supersedes any default that would otherwise add them
 - Commit after each task or logical group
-- `npm run build` (T045) is the only automated verification step in this project
+- `npm run build` (T049) is the only automated verification step in this project

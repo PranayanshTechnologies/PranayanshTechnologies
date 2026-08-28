@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { PageMeta } from "../components/layout/PageMeta";
 import { MultiStepQuoteForm } from "../components/forms/MultiStepQuoteForm";
+import { CtaBanner } from "../components/cta/CtaBanner";
 import type { QuoteRequest } from "../types/content";
 
 export default function GetAQuote() {
@@ -40,6 +41,15 @@ export default function GetAQuote() {
             contact@pranayansh.com
           </a>
         </div>
+
+        <CtaBanner
+          heading="Still deciding where to start?"
+          body="Ask a technical question and we will help you shape the right engagement."
+          ctaLabel="Contact Our Team"
+          to="/contact"
+          secondaryLabel="Join Our Network"
+          secondaryTo="/careers"
+        />
       </div>
     </>
   );

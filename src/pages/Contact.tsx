@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { PageMeta } from "../components/layout/PageMeta";
 import { ConsentCheckbox } from "../components/forms/ConsentCheckbox";
 import { submitForm } from "../lib/submitForm";
@@ -7,10 +8,13 @@ import type { ContactInquiry } from "../types/content";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function Contact() {
+  const location = useLocation();
+  const contactContext = location.state as { serviceId?: string; subject?: string } | null;
   const [form, setForm] = useState<ContactInquiry>({
     name: "",
     email: "",
-    subject: "General Technical Inquiry",
+    subject: contactContext?.subject ?? "General Technical Inquiry",
+    serviceId: contactContext?.serviceId,
     message: "",
     consentAccepted: false,
   });
@@ -162,6 +166,9 @@ export default function Contact() {
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     className="mt-1 w-full rounded-lg border border-[#E0E0E0] bg-white px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:border-[#393939] dark:bg-[#1F1F1F] dark:text-[#F4F4F4]"
                   >
+                    {contactContext?.serviceId && contactContext.subject && (
+                      <option value={contactContext.subject}>{contactContext.subject}</option>
+                    )}
                     <option value="Turnkey Custom Software Project">Turnkey Custom Software Project</option>
                     <option value="Dedicated Engineering Squad (Remote/On-Premise)">Dedicated Engineering Squad (Remote / On-Premise)</option>
                     <option value="Staff Augmentation (48h Match)">Staff Augmentation (48h Match)</option>

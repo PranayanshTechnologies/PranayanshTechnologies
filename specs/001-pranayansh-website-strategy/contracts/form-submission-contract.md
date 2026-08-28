@@ -26,6 +26,7 @@ Each of the three lead-capture forms (Get a Quote, Contact, Careers/Join Our Net
 - `consentAccepted`: MUST be `true`; the consent checkbox is required and unchecked state blocks submission (FR-020).
 - Quote-specific: `serviceId`, `technologyNeed`, `timeframe` required.
 - Contact-specific: `message` required.
+- Emerging-service Contact inquiries MAY include `serviceId` to preserve the selected capability context from the Services page.
 - Career-specific: `technologyBackground` MUST contain at least one entry.
 
 ## Response handling

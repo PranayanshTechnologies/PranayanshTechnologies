@@ -12,7 +12,7 @@ export const services: ServiceOffering[] = [
     description:
       "We design, build, and deploy custom software products with modern cloud-native architectures, rigorous QA automation, and beautiful user interfaces.",
     idealFor: "Startups and enterprises needing end-to-end product delivery with guaranteed milestone SLAs.",
-    status: "core",
+    status: "emerging",
     category: "development",
     ctaLabel: "Start a Project",
     turnaround: "Detailed proposal in 3 days",
@@ -31,7 +31,7 @@ export const services: ServiceOffering[] = [
     description:
       "Modernize legacy monoliths into resilient, containerized microservices on AWS and Azure with automated GitOps pipelines and 30-40% cloud cost reduction.",
     idealFor: "Companies scaling infrastructure, containerizing workloads, or planning multi-cloud migrations.",
-    status: "core",
+    status: "emerging",
     category: "development",
     ctaLabel: "Scope Cloud Project",
     turnaround: "Audit in 48 hours",
@@ -50,7 +50,7 @@ export const services: ServiceOffering[] = [
     description:
       "We build fluid, 60fps mobile applications with offline-first synchronization, biometric authentication, and smooth App Store / Google Play publishing.",
     idealFor: "Businesses launching new customer-facing apps or upgrading existing mobile products.",
-    status: "core",
+    status: "emerging",
     category: "development",
     ctaLabel: "Build Mobile App",
     turnaround: "Scope in 48 hours",
@@ -79,6 +79,42 @@ export const services: ServiceOffering[] = [
       "Autonomous AI Agents & automated workflow orchestration",
       "SOC-2 / HIPAA compliant data privacy safeguards",
       "Custom model fine-tuning and evaluation pipelines",
+    ],
+  },
+  {
+    id: "managed-services",
+    name: "Managed Engineering & DevOps Services",
+    tagline: "Ongoing platform care, observability, and delivery support.",
+    description:
+      "A growing capability for teams that need dependable release operations, monitoring, and continuous engineering support after launch.",
+    idealFor: "Organizations exploring a long-term managed engineering or DevOps partnership.",
+    status: "emerging",
+    category: "advisory",
+    ctaLabel: "Register Interest",
+    turnaround: "Discovery call in 24h",
+    startingRate: "Custom Retainer",
+    features: [
+      "Release operations and deployment guidance",
+      "Observability and incident-readiness planning",
+      "Cloud cost and reliability reviews",
+    ],
+  },
+  {
+    id: "devops-services",
+    name: "DevOps Enablement",
+    tagline: "A practical path from manual delivery to repeatable deployment.",
+    description:
+      "A growing capability focused on CI/CD foundations, infrastructure automation, and delivery workflows tailored to your engineering team.",
+    idealFor: "Teams that need a clearer, more reliable path to shipping software.",
+    status: "emerging",
+    category: "advisory",
+    ctaLabel: "Register Interest",
+    turnaround: "Assessment in 48 hours",
+    startingRate: "Custom Assessment",
+    features: [
+      "CI/CD workflow design",
+      "Infrastructure-as-code guidance",
+      "Environment and release process assessment",
     ],
   },
 

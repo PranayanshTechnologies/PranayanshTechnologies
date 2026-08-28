@@ -22,7 +22,7 @@ Represents a staffing engagement model or an emerging service line.
 
 ## Industry
 
-Represents a target industry vertical.
+Represents a target capability area.
 
 | Field | Type | Notes |
 |---|---|---|
@@ -64,6 +64,7 @@ Represents a named technology skill area.
 | `name` | `string` | required |
 | `email` | `string` | required, valid email pattern |
 | `message` | `string` | required |
+| `serviceId` | `string \| undefined` | optional emerging service/capability context carried from Services |
 | `consentAccepted` | `boolean` | MUST be `true` before submission is allowed (FR-020) |
 
 ## Candidate Interest Submission (form submission payload)

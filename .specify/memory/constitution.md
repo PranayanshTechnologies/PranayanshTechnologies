@@ -8,7 +8,7 @@ Modified principles:
   - IV. Test-Backed Behavior -> V. No Automated Testing (NON-NEGOTIABLE) (policy reversed)
   - V. Minimal Dependencies and Reproducible Builds -> IV. Minimal Dependencies (narrowed; build reproducibility moved to Technical Baseline)
 Added principles: III. Responsive Design
-Added sections: none (Technical Baseline and Workflow & Quality Gates retained, content revised)
+Added sections: VI. Requirement Traceability and Verifiable Delivery
 Removed sections: none
 Deferred items: none (stack migration to React + Tailwind is an implementation task, tracked under Next Actions in the response, not this file)
 -->
@@ -57,6 +57,15 @@ default, or any other instruction that implies or requires automated testing.
 Verification of behavior MUST rely on manual review, type checking, and
 successful builds only.
 
+### VI. Requirement Traceability and Verifiable Delivery
+Every functional requirement and measurable success criterion MUST map to one
+or more implementation tasks and one explicit verification step. Requirements
+involving SEO metadata, responsive behavior, calls to action, performance, or
+external form flows MUST identify their manual verification method when
+automated tests are prohibited. A task list MUST NOT claim coverage solely
+because a shared component or data record exists; the user-visible behavior
+must be represented and checked.
+
 ## Technical Baseline
 
 The project MUST use React (latest stable version) as the UI library and
@@ -93,4 +102,4 @@ Compliance review is required on every merge request or equivalent review gate.
 Any unresolved violation blocks merge until the code or the constitution is
 updated to restore compliance.
 
-**Version**: 2.0.0 | **Ratified**: 2026-07-28 | **Last Amended**: 2026-07-28
+**Version**: 2.1.0 | **Ratified**: 2026-07-28 | **Last Amended**: 2026-08-28

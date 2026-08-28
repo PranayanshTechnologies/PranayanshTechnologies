@@ -17,7 +17,7 @@ export interface ServiceOffering {
   icon?: string;
 }
 
-/** A target industry vertical, linked to relevant services and technologies. */
+/** A target capability area, linked to relevant services and technologies. */
 export interface Industry {
   id: string;
   name: string;
@@ -114,6 +114,7 @@ export interface ContactInquiry {
   name: string;
   email: string;
   subject?: string;
+  serviceId?: string;
   message: string;
   consentAccepted: boolean;
 }

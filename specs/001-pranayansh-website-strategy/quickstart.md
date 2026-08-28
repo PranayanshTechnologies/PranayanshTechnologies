@@ -31,11 +31,15 @@ Run through each scenario and confirm the expected outcome. These map directly t
 
 - From Home, click the primary CTA.
 - **Expected**: Lands directly on the Get a Quote form.
+- Repeat from a representative deep page such as FAQ or Case Studies and record the click count.
+- **Expected**: The form opens within two clicks from both Home and the deep page.
 
 ### 3. Services page → pre-selected Quote form (User Story 1 Scenario 2, FR-003, FR-008)
 
 - From Services, click the CTA on any one of the three engagement models (Dedicated Crew, On-Demand, Pay-Per-Hour).
 - **Expected**: Get a Quote form opens with that engagement model pre-selected.
+- Start a timer before reading the comparison element and stop after selecting the best-fit model.
+- **Expected**: The model can be selected in under 3 minutes (SC-002).
 
 ### 4. Quote form validation and consent (FR-008, FR-020, edge case)
 
@@ -56,7 +60,7 @@ Run through each scenario and confirm the expected outcome. These map directly t
 ### 6. Emerging services labeling (FR-014, edge case)
 
 - Locate any emerging service (e.g., AI & Data Solutions).
-- **Expected**: Clearly labeled as a growing/emerging capability with a "register interest" CTA, distinct from core staffing CTAs.
+- **Expected**: Clearly labeled as a growing/emerging capability with a "register interest" CTA, distinct from core staffing CTAs; activating it opens Contact with the selected capability carried into the inquiry context.
 
 ### 7. Trust and credibility content (User Story 3, FR-006, FR-018, SC-007)
 
@@ -71,13 +75,19 @@ Run through each scenario and confirm the expected outcome. These map directly t
 
 ### 9. SEO metadata uniqueness (FR-017, SC-004)
 
-- Inspect the page `<title>` and meta description on each of the 11 pages.
+- Inspect the page `<title>` and meta description on each of the 11 pages, including Privacy Policy.
 - **Expected**: Every page has a unique title and meta description.
 
 ### 10. Responsive behavior (FR-016, SC-003)
 
 - View each page at common breakpoints (e.g., ~375px mobile, ~768px tablet, ~1280px desktop).
 - **Expected**: No horizontal scrolling; navigation, forms, and CTAs remain fully usable at every breakpoint.
+
+### 11. CTA coverage and performance (FR-013, SC-006, plan performance goal)
+
+- Visit all 11 routes and record at least one appropriate CTA on each page: Get a Quote for buyer-facing pages, Join Our Network for talent-facing pages, and a clear next step from FAQ/Resources/Privacy Policy.
+- Run browser DevTools Lighthouse or Performance checks at desktop and mobile presets on Home and Services.
+- **Expected**: No route is left without a next action, and the implementation records whether the approximate 2.5 second LCP goal is met or documents the remaining bottleneck.
 
 ## Build verification
 
@@ -86,3 +96,13 @@ npm run build
 ```
 
 - **Expected**: Build completes successfully with no TypeScript errors (this is the project's sole automated verification gate, per the constitution's No Automated Testing principle — no test command exists or should be added).
+
+## Validation Evidence (2026-08-28)
+
+- Routes: all 11 routes loaded successfully in the shared Chromium browser session.
+- SEO: all 11 routes had a non-empty description and unique document title.
+- CTA coverage: all 11 routes exposed at least one link or button; Careers, Get a Quote, and Privacy Policy were explicitly checked after the CTA review.
+- Contact validation: submitting the empty Contact form produced inline validation errors and did not submit.
+- Emerging capability flow: Services showed 6 Register Interest cards; selecting one opened Contact with its capability visible in the subject field.
+- Responsive layout: Home and Services produced no horizontal overflow at 1280px and 375px viewport widths.
+- Performance timings: Home/Services load timings were 439ms/423ms desktop and 375ms/300ms mobile in the local browser session. Largest Contentful Paint was unavailable because the local Chromium session emitted no LCP performance entry; Lighthouse should be used in a production-like deployment for a definitive LCP measurement.

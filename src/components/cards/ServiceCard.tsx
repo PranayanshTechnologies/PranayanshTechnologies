@@ -7,6 +7,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
   const isDev = service.category === "development";
+  const isEmerging = service.status === "emerging";
 
   return (
     <div className="clean-card flex h-full flex-col justify-between rounded-xl border border-[#E0E0E0] bg-white p-7 shadow-xs dark:border-[#2D2D2D] dark:bg-[#161616]">
@@ -19,7 +20,7 @@ export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
                 : "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300"
             }`}
           >
-            {isDev ? "Software Engineering" : "Consulting & Squads"}
+            {isEmerging ? "Growing Capability" : isDev ? "Software Engineering" : "Consulting & Squads"}
           </span>
 
           {service.turnaround && (
@@ -59,7 +60,7 @@ export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
           onClick={() => onCtaClick(service)}
           className="w-full rounded-lg bg-[#161616] px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-[#FF462D] dark:bg-[#262626] dark:hover:bg-[#FF462D]"
         >
-          {service.ctaLabel} →
+          {isEmerging ? "Register Interest" : service.ctaLabel} →
         </button>
       </div>
     </div>

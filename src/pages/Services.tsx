@@ -16,8 +16,20 @@ export default function Services() {
     if (activeFilter === "all") return true;
     return s.category === activeFilter;
   });
+  const coreServices = filteredServices.filter((service) => service.status === "core");
+  const emergingServices = filteredServices.filter((service) => service.status === "emerging");
 
   function handleCta(service: ServiceOffering) {
+    if (service.status === "emerging") {
+      navigate("/contact", {
+        state: {
+          serviceId: service.id,
+          subject: service.name,
+        },
+      });
+      return;
+    }
+
     navigate("/get-a-quote", {
       state: {
         serviceId: service.id,
@@ -70,11 +82,37 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredServices.map((service) => (
-            <ServiceCard key={service.id} service={service} onCtaClick={handleCta} />
-          ))}
-        </div>
+        {coreServices.length > 0 && (
+          <section className="mt-8" aria-labelledby="core-services-heading">
+            <h2 id="core-services-heading" className="font-heading text-xl font-bold text-[#161616] dark:text-[#F4F4F4]">
+              Core Engagement Models
+            </h2>
+            <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {coreServices.map((service) => (
+                <ServiceCard key={service.id} service={service} onCtaClick={handleCta} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {emergingServices.length > 0 && (
+          <section className="mt-16 rounded-2xl border border-[#FFCCC4] bg-[#FFF8F6] p-6 sm:p-8 dark:border-[#7E190E] dark:bg-[#2A0E0A]" aria-labelledby="emerging-services-heading">
+            <div className="max-w-2xl">
+              <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">Growing Capabilities</span>
+              <h2 id="emerging-services-heading" className="mt-2 font-heading text-2xl font-bold text-[#161616] dark:text-[#F4F4F4]">
+                Explore What We Are Building Next
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-[#525252] dark:text-[#C6C6C6]">
+                These services are developing now. Register your interest and we will discuss the right path for your needs.
+              </p>
+            </div>
+            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {emergingServices.map((service) => (
+                <ServiceCard key={service.id} service={service} onCtaClick={handleCta} />
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Comparison Matrix */}
         <div className="mt-24">
