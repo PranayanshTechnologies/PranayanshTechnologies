@@ -9,7 +9,16 @@ import type {
 } from "../types/durgotsav";
 import { authStorage } from "./authStorage";
 
-const API_BASE_URL = import.meta.env.VITE_DURGOTSAV_API_BASE_URL || "http://localhost:5000/api";
+const getBaseUrl = (): string => {
+  const envUrl =
+    import.meta.env.VITE_DURGOTSAV_API_BASE_URL ||
+    import.meta.env.VITE_API_BASE_URL ||
+    "https://dg-api.pranayansh.com/api";
+  const trimmed = envUrl.trim().replace(/\/+$/, "");
+  return trimmed.endsWith("/api") ? trimmed : `${trimmed}/api`;
+};
+
+const API_BASE_URL = getBaseUrl();
 
 export class ApiError extends Error {
   statusCode: number;
