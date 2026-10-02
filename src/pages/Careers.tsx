@@ -134,14 +134,14 @@ export default function Careers() {
   return (
     <>
       <PageMeta
-        title="Open Engineering Roles &amp; Talent Bench | Pranayansh Technologies"
-        description="Explore open engineering positions across India, US, and EU timezones. Join the Pranayansh talent bench for high-impact software delivery."
+        title="Open Engineering Roles &amp; Talent Bench | PRANAYANSH Technology"
+        description="Explore open engineering positions across India, US, and EU timezones. Join the PRANAYANSH talent network for high-impact software delivery."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">
         {/* 1. Header with Kicker */}
         <div className="max-w-4xl">
-          <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
+          <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
             Careers &amp; Engineering Talent Bench
           </span>
           <h1 className="mt-2 font-heading text-3xl sm:text-5xl font-bold tracking-tight text-[#161616] dark:text-[#F4F4F4]">
@@ -189,7 +189,7 @@ export default function Careers() {
         <div className="mt-20">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
-              <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
+              <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
                 Live Opportunities
               </span>
               <h2 className="mt-1 font-heading text-2xl sm:text-3xl font-bold tracking-tight text-[#161616] dark:text-[#F4F4F4]">
@@ -210,7 +210,7 @@ export default function Careers() {
                     placeholder="e.g. React, .NET, Node.js, AWS, Python..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full rounded-lg border border-[#E0E0E0] bg-white px-3 py-2 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:border-[#393939] dark:bg-[#161616] dark:text-[#F4F4F4]"
+                    className="w-full rounded-lg border border-[#E0E0E0] bg-white px-3 py-2 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:border-[#393939] dark:bg-[#161616] dark:text-[#F4F4F4]"
                   />
                 </div>
               </div>
@@ -221,7 +221,7 @@ export default function Careers() {
                 <select
                   value={selectedDept}
                   onChange={(e) => setSelectedDept(e.target.value)}
-                  className="mt-1 w-full rounded-lg border border-[#E0E0E0] bg-white px-3 py-2 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:border-[#393939] dark:bg-[#161616] dark:text-[#F4F4F4]"
+                  className="mt-1 w-full rounded-lg border border-[#E0E0E0] bg-white px-3 py-2 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:border-[#393939] dark:bg-[#161616] dark:text-[#F4F4F4]"
                 >
                   <option value="all">All Departments</option>
                   <option value="Engineering">Engineering &amp; Architecture</option>
@@ -237,7 +237,7 @@ export default function Careers() {
                 <select
                   value={selectedLocation}
                   onChange={(e) => setSelectedLocation(e.target.value)}
-                  className="mt-1 w-full rounded-lg border border-[#E0E0E0] bg-white px-3 py-2 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:border-[#393939] dark:bg-[#161616] dark:text-[#F4F4F4]"
+                  className="mt-1 w-full rounded-lg border border-[#E0E0E0] bg-white px-3 py-2 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:border-[#393939] dark:bg-[#161616] dark:text-[#F4F4F4]"
                 >
                   <option value="all">All Locations</option>
                   <option value="india">🇮🇳 India (IST Timezone / New Delhi / Mohali / Bangalore / Hyd / Pune)</option>
@@ -252,7 +252,7 @@ export default function Careers() {
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
-                  className="mt-1 w-full rounded-lg border border-[#E0E0E0] bg-white px-3 py-2 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:border-[#393939] dark:bg-[#161616] dark:text-[#F4F4F4]"
+                  className="mt-1 w-full rounded-lg border border-[#E0E0E0] bg-white px-3 py-2 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:border-[#393939] dark:bg-[#161616] dark:text-[#F4F4F4]"
                 >
                   <option value="all">All Tracks</option>
                   <option value="dedicated">Full-Time Dedicated</option>
@@ -279,7 +279,7 @@ export default function Careers() {
                     setSelectedLocation("all");
                     setSelectedType("all");
                   }}
-                  className="mt-4 rounded-lg bg-[#FF462D] px-4 py-2 text-xs font-semibold text-white"
+                  className="mt-4 rounded-lg bg-[#5B47F5] px-4 py-2 text-xs font-semibold text-white"
                 >
                   Reset All Filters
                 </button>
@@ -295,7 +295,7 @@ export default function Careers() {
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                       <div>
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="kicker-mono text-[10px] font-bold text-[#FF462D] dark:text-[#FFA699] bg-[#FFF2F0] dark:bg-[#2A0E0A] px-2.5 py-0.5 rounded-md">
+                          <span className="kicker-mono text-[10px] font-bold text-[#5B47F5] dark:text-[#9FA3FF] bg-[#EEF0FF] dark:bg-[#1E1B4B] px-2.5 py-0.5 rounded-md">
                             {job.department}
                           </span>
                           <span className="font-mono text-[11px] text-[#525252] dark:text-[#A8A8A8] bg-[#F4F4F4] dark:bg-[#1F1F1F] px-2.5 py-0.5 rounded-md">
@@ -341,7 +341,7 @@ export default function Careers() {
                         <button
                           type="button"
                           onClick={() => handleApplyForJob(job)}
-                          className="rounded-lg bg-[#FF462D] px-4 py-2 text-xs font-bold text-white shadow-xs hover:bg-[#E0301E] transition"
+                          className="rounded-lg bg-[#5B47F5] px-4 py-2 text-xs font-bold text-white shadow-xs hover:bg-[#4634D6] transition"
                         >
                           Apply Now →
                         </button>
@@ -355,7 +355,7 @@ export default function Careers() {
                         <div className="rounded-lg bg-[#F4F4F4] p-4 dark:bg-[#1F1F1F] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border border-[#E0E0E0] dark:border-[#2D2D2D]">
                           <div>
                             <p className="kicker-mono text-[10px] font-bold text-[#8D8D8D]">Target Compensation Range</p>
-                            <p className="font-mono text-sm sm:text-base font-bold text-[#FF462D] dark:text-[#FF7561] mt-0.5">
+                            <p className="font-mono text-sm sm:text-base font-bold text-[#5B47F5] dark:text-[#7B74FF] mt-0.5">
                               {job.salaryRange}
                             </p>
                           </div>
@@ -373,7 +373,7 @@ export default function Careers() {
                             <ul className="mt-2 space-y-1.5">
                               {job.responsibilities.map((r, i) => (
                                 <li key={i} className="flex items-start gap-1.5">
-                                  <span className="text-[#FF462D] font-bold">▪</span>
+                                  <span className="text-[#5B47F5] font-bold">▪</span>
                                   <span>{r}</span>
                                 </li>
                               ))}
@@ -385,7 +385,7 @@ export default function Careers() {
                             <ul className="mt-2 space-y-1.5">
                               {job.requirements.map((req, i) => (
                                 <li key={i} className="flex items-start gap-1.5">
-                                  <span className="text-[#FF462D] font-bold">▪</span>
+                                  <span className="text-[#5B47F5] font-bold">▪</span>
                                   <span>{req}</span>
                                 </li>
                               ))}
@@ -403,11 +403,11 @@ export default function Careers() {
 
         {/* 4. Apply to Talent Bench — Submit Your Technical Profile (Clean Experience Levels, No Trial Mentions) */}
         <div ref={formRef} className="mt-24 max-w-4xl mx-auto">
-          <div className="clean-card rounded-2xl border-2 border-[#FF462D]/30 bg-white p-8 sm:p-12 shadow-md dark:border-[#FF462D]/20 dark:bg-[#161616]">
+          <div className="clean-card rounded-2xl border-2 border-[#5B47F5]/30 bg-white p-8 sm:p-12 shadow-md dark:border-[#5B47F5]/20 dark:bg-[#161616]">
             {/* Form Header */}
             <div className="border-b border-[#E0E0E0] pb-6 dark:border-[#2D2D2D]">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
+                <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
                   Fast-Track Application
                 </span>
                 <span className="font-mono text-[11px] bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 font-bold px-3 py-1 rounded-full border border-emerald-200 dark:border-emerald-900">
@@ -438,7 +438,7 @@ export default function Careers() {
                     setStatus("idle");
                     setSelectedRoleTitle("");
                   }}
-                  className="mt-5 rounded-lg bg-[#FF462D] px-5 py-2 text-xs font-bold text-white shadow-xs"
+                  className="mt-5 rounded-lg bg-[#5B47F5] px-5 py-2 text-xs font-bold text-white shadow-xs"
                 >
                   Submit Another Profile
                 </button>
@@ -463,7 +463,7 @@ export default function Careers() {
                         onClick={() => setForm({ ...form, yearsOfExperience: s.id })}
                         className={`rounded-xl border p-3.5 text-center transition ${
                           form.yearsOfExperience === s.id
-                            ? "border-[#FF462D] bg-[#FFF2F0] text-[#FF462D] dark:border-[#FF462D] dark:bg-[#2A0E0A] dark:text-[#FFA699] font-bold ring-1 ring-[#FF462D]"
+                            ? "border-[#5B47F5] bg-[#EEF0FF] text-[#5B47F5] dark:border-[#5B47F5] dark:bg-[#1E1B4B] dark:text-[#9FA3FF] font-bold ring-1 ring-[#5B47F5]"
                             : "border-[#E0E0E0] bg-[#F4F4F4] text-[#525252] dark:border-[#393939] dark:bg-[#1F1F1F] dark:text-[#C6C6C6]"
                         }`}
                       >
@@ -489,7 +489,7 @@ export default function Careers() {
                           onClick={() => toggleTechnology(tech.id)}
                           className={`rounded-lg px-3.5 py-1.5 text-xs font-semibold transition ${
                             isSelected
-                              ? "bg-[#FF462D] text-white shadow-2xs"
+                              ? "bg-[#5B47F5] text-white shadow-2xs"
                               : "bg-[#F4F4F4] text-[#525252] hover:bg-[#E0E0E0] dark:bg-[#1F1F1F] dark:text-[#C6C6C6] dark:hover:bg-[#262626]"
                           }`}
                         >
@@ -516,7 +516,7 @@ export default function Careers() {
                         placeholder="Full Legal Name *"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className={`w-full rounded-lg border px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:bg-[#1F1F1F] dark:text-[#F4F4F4] ${
+                        className={`w-full rounded-lg border px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:bg-[#1F1F1F] dark:text-[#F4F4F4] ${
                           errors.name ? "border-red-400" : "border-[#E0E0E0] dark:border-[#393939]"
                         }`}
                       />
@@ -529,7 +529,7 @@ export default function Careers() {
                         placeholder="Primary Work Email *"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className={`w-full rounded-lg border px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:bg-[#1F1F1F] dark:text-[#F4F4F4] ${
+                        className={`w-full rounded-lg border px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:bg-[#1F1F1F] dark:text-[#F4F4F4] ${
                           errors.email ? "border-red-400" : "border-[#E0E0E0] dark:border-[#393939]"
                         }`}
                       />
@@ -542,7 +542,7 @@ export default function Careers() {
                         placeholder="LinkedIn Profile URL"
                         value={form.linkedInOrGithub}
                         onChange={(e) => setForm({ ...form, linkedInOrGithub: e.target.value })}
-                        className="w-full rounded-lg border border-[#E0E0E0] bg-white px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:border-[#393939] dark:bg-[#1F1F1F] dark:text-[#F4F4F4]"
+                        className="w-full rounded-lg border border-[#E0E0E0] bg-white px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:border-[#393939] dark:bg-[#1F1F1F] dark:text-[#F4F4F4]"
                       />
                     </div>
 
@@ -552,7 +552,7 @@ export default function Careers() {
                         placeholder="GitHub / GitLab / Portfolio URL"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="w-full rounded-lg border border-[#E0E0E0] bg-white px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:border-[#393939] dark:bg-[#1F1F1F] dark:text-[#F4F4F4]"
+                        className="w-full rounded-lg border border-[#E0E0E0] bg-white px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:border-[#393939] dark:bg-[#1F1F1F] dark:text-[#F4F4F4]"
                       />
                     </div>
                   </div>
@@ -574,7 +574,7 @@ export default function Careers() {
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full rounded-xl bg-[#FF462D] px-6 py-4 text-xs font-bold text-white shadow-md hover:bg-[#E0301E] disabled:opacity-60 transition font-sans tracking-wider uppercase"
+                  className="w-full rounded-xl bg-[#5B47F5] px-6 py-4 text-xs font-bold text-white shadow-md hover:bg-[#4634D6] disabled:opacity-60 transition font-sans tracking-wider uppercase"
                 >
                   {status === "submitting" ? "Submitting Profile..." : "Submit Technical Profile (48h Review) →"}
                 </button>

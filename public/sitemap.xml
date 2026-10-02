@@ -2,10 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>/</loc></url>
   <url><loc>/services</loc></url>
+  <url><loc>/ai-solutions</loc></url>
+  <url><loc>/cloud-services</loc></url>
   <url><loc>/industries</loc></url>
   <url><loc>/about</loc></url>
   <url><loc>/careers</loc></url>
-  <url><loc>/case-studies</loc></url>
+  <url><loc>/portfolio</loc></url>
   <url><loc>/resources</loc></url>
   <url><loc>/get-a-quote</loc></url>
   <url><loc>/contact</loc></url>

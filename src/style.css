@@ -3,28 +3,29 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Kyndryl Signature Coral-Red & Terracotta Palette */
-  --color-brand-50: #fff2f0;
-  --color-brand-100: #ffe5e0;
-  --color-brand-200: #ffccc4;
-  --color-brand-300: #ffa699;
-  --color-brand-400: #ff7561;
-  --color-brand-500: #ff462d; /* Kyndryl Red */
-  --color-brand-600: #e0301e;
-  --color-brand-700: #ba2212;
-  --color-brand-800: #991c0e;
-  --color-brand-900: #7e190e;
-  --color-brand-950: #470802;
+  /* PRANAYANSH Technology — Signature Indigo & Aurora Palette */
+  --color-brand-50: #eef0ff;
+  --color-brand-100: #e0e3ff;
+  --color-brand-200: #c5c9ff;
+  --color-brand-300: #9fa3ff;
+  --color-brand-400: #7b74ff;
+  --color-brand-500: #5b47f5; /* PRANAYANSH Indigo */
+  --color-brand-600: #4634d6;
+  --color-brand-700: #3827ab;
+  --color-brand-800: #2d2186;
+  --color-brand-900: #251d6b;
+  --color-brand-950: #150f3d;
 
-  --color-accent-amber: #f1c21b;
-  --color-accent-emerald: #24a148;
-  --color-accent-cyan: #1192e8;
+  --color-accent-amber: #f5a524;
+  --color-accent-emerald: #16b981;
+  --color-accent-cyan: #0ea5e9;
+  --color-accent-violet: #a855f7;
 
-  /* Kyndryl IBM Plex Typography System */
-  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-heading: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-serif: "IBM Plex Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  /* Modern enterprise typography: Sora headings, Inter body, JetBrains Mono kickers */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-serif: "Sora", Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 html {
@@ -41,11 +42,11 @@ body {
 }
 
 html.dark body {
-  background-color: #121212;
-  color: #f4f4f4;
+  background-color: #0b0b14;
+  color: #f4f4f6;
 }
 
-/* Kyndryl-style mono kicker badge */
+/* Uppercase mono kicker badge used above section headings */
 .kicker-mono {
   font-family: var(--font-mono);
   text-transform: uppercase;
@@ -63,7 +64,7 @@ html.dark body {
 }
 
 html.dark .clean-card:hover {
-  box-shadow: 0 16px 32px -12px rgba(255, 70, 45, 0.08);
+  box-shadow: 0 16px 32px -12px rgba(91, 71, 245, 0.16);
 }
 
 

@@ -4,10 +4,12 @@ import { Footer } from "./components/layout/Footer";
 import { StickyContactBar } from "./components/cta/StickyContactBar";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import AiSolutions from "./pages/AiSolutions";
+import CloudServices from "./pages/CloudServices";
 import Industries from "./pages/Industries";
 import About from "./pages/About";
 import Careers from "./pages/Careers";
-import CaseStudies from "./pages/CaseStudies";
+import Portfolio from "./pages/Portfolio";
 import Resources from "./pages/Resources";
 import GetAQuote from "./pages/GetAQuote";
 import Contact from "./pages/Contact";
@@ -16,7 +18,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 /**
  * Root application component: shared layout (Navbar + Footer + StickyContactBar)
- * with routes for all 11 pages (FR-015).
+ * with routes for all 13 pages.
  */
 export default function App() {
   return (
@@ -26,10 +28,12 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/ai-solutions" element={<AiSolutions />} />
+          <Route path="/cloud-services" element={<CloudServices />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/get-a-quote" element={<GetAQuote />} />
           <Route path="/contact" element={<Contact />} />
@@ -42,3 +46,4 @@ export default function App() {
     </div>
   );
 }
+

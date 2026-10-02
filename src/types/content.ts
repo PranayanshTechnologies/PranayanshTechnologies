@@ -1,7 +1,7 @@
 // Shared TypeScript interfaces for all structured content, interactive tools,
-// and form-submission payloads used across Pranayansh Technologies.
+// and form-submission payloads used across PRANAYANSH Technology.
 
-/** A staffing engagement model or software development service line. */
+/** One of the 12 core service lines offered by PRANAYANSH Technology. */
 export interface ServiceOffering {
   id: string;
   name: string;
@@ -9,11 +9,28 @@ export interface ServiceOffering {
   description: string;
   idealFor: string;
   status: "core" | "emerging";
-  category: "staffing" | "development" | "advisory";
+  category:
+    | "engineering"
+    | "cloud-devops"
+    | "ai-data"
+    | "design"
+    | "consulting"
+    | "managed-marketing";
   ctaLabel: string;
   features?: string[];
   startingRate?: string;
   turnaround?: string;
+  icon?: string;
+}
+
+/** A future/in-development SaaS product for the Products showcase. */
+export interface Product {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  status: "coming-soon" | "in-development" | "early-access";
+  category: string;
   icon?: string;
 }
 
@@ -34,7 +51,7 @@ export interface Industry {
 export interface Technology {
   id: string;
   name: string;
-  category: "language" | "framework" | "cloud" | "mobile" | "ai-data" | "practice";
+  category: "language" | "framework" | "cloud" | "database" | "mobile" | "ai-data" | "practice";
   benchCount?: number;
   avgExperience?: string;
   tagline?: string;
@@ -66,7 +83,7 @@ export interface EngagementModel {
   subtitle: string;
   description: string;
   bestFor: string;
-  managementResponsibility: "Client Directed" | "Shared Governance" | "Pranayansh Owned";
+  managementResponsibility: "Client Directed" | "Shared Governance" | "PRANAYANSH Owned";
   billingStructure: "Hourly / Time & Material" | "Monthly Retainer / Pod" | "Fixed Milestone";
   onboardingTime: "24 - 48 Hours" | "3 - 5 Days" | "1 - 2 Weeks";
   flexibility: "High" | "Maximum" | "Milestone-Bound";
@@ -79,7 +96,7 @@ export interface QuizOption {
   id: string;
   label: string;
   description: string;
-  modelAffinity: "dedicated-crew" | "on-demand-resources" | "software-development" | "cloud-consulting";
+  modelAffinity: "dedicated-development-teams" | "staff-augmentation" | "custom-software-development" | "cloud-consulting-migration";
 }
 
 /** Interactive quiz question structure. */
@@ -163,5 +180,5 @@ export interface FaqEntry {
   id: string;
   question: string;
   answer: string;
-  topic: "staffing" | "development" | "pricing" | "onboarding" | "security";
+  topic: "services" | "ai" | "cloud" | "engagement" | "security" | "pricing" | "partnership";
 }

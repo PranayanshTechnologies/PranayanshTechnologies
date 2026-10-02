@@ -56,13 +56,13 @@ export default function Contact() {
     <>
       <PageMeta
         title="Contact Us | Technical Consultation &amp; Dedicated Squads"
-        description="Get in touch with Pranayansh Technologies for custom software development consultations or engineering team advisory."
+        description="Get in touch with PRANAYANSH Technology for custom software development consultations or engineering team advisory."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">
         {/* Header */}
         <div className="max-w-3xl">
-          <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
+          <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
             Get In Touch
           </span>
           <h1 className="mt-2 font-heading text-3xl sm:text-5xl font-bold tracking-tight text-[#161616] dark:text-[#F4F4F4]">
@@ -77,18 +77,18 @@ export default function Contact() {
           {/* Left Column: Direct Info */}
           <div className="lg:col-span-5 space-y-6">
             <div className="clean-card rounded-xl border border-[#E0E0E0] bg-white p-6 sm:p-8 shadow-xs dark:border-[#2D2D2D] dark:bg-[#161616]">
-              <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">Direct Channels</span>
+              <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">Direct Channels</span>
               <h2 className="mt-2 font-heading text-lg font-bold text-[#161616] dark:text-[#F4F4F4]">Global Availability</h2>
               <div className="mt-5 space-y-4 text-xs text-[#525252] dark:text-[#C6C6C6] font-sans">
                 <div>
                   <p className="font-bold text-[#161616] dark:text-[#F4F4F4]">Email</p>
-                  <a href="mailto:contact@pranayansh.com" className="text-[#FF462D] dark:text-[#FF7561] hover:underline font-medium">
+                  <a href="mailto:contact@pranayansh.com" className="text-[#5B47F5] dark:text-[#7B74FF] hover:underline font-medium">
                     contact@pranayansh.com
                   </a>
                 </div>
                 <div>
                   <p className="font-bold text-[#161616] dark:text-[#F4F4F4]">Phone</p>
-                  <p>+1 (800) 555-0199 / +1 (415) 890-3200</p>
+                  <p>+91 92202 29272 / +91-120-4428444</p>
                 </div>
                 <div>
                   <p className="font-bold text-[#161616] dark:text-[#F4F4F4]">Deployment Modes</p>
@@ -97,8 +97,8 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-[#FFCCC4] bg-[#FFF2F0] p-6 dark:border-[#7E190E] dark:bg-[#2A0E0A]">
-              <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">Instant Scoping</span>
+            <div className="rounded-xl border border-[#C5C9FF] bg-[#EEF0FF] p-6 dark:border-[#251D6B] dark:bg-[#1E1B4B]">
+              <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">Instant Scoping</span>
               <h3 className="mt-1 font-heading font-bold text-sm text-[#161616] dark:text-[#F4F4F4]">
                 Need an Immediate Quote?
               </h3>
@@ -107,7 +107,7 @@ export default function Contact() {
               </p>
               <a
                 href="/get-a-quote"
-                className="mt-3 inline-block text-xs font-bold text-[#FF462D] dark:text-[#FF7561] hover:underline"
+                className="mt-3 inline-block text-xs font-bold text-[#5B47F5] dark:text-[#7B74FF] hover:underline"
               >
                 Launch Planner →
               </a>
@@ -133,7 +133,7 @@ export default function Contact() {
                       placeholder="e.g. Sarah Jenkins"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className={`mt-1 w-full rounded-lg border px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:bg-[#1F1F1F] dark:text-[#F4F4F4] ${
+                      className={`mt-1 w-full rounded-lg border px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:bg-[#1F1F1F] dark:text-[#F4F4F4] ${
                         errors.name ? "border-red-400" : "border-[#E0E0E0] dark:border-[#393939]"
                       }`}
                     />
@@ -149,7 +149,7 @@ export default function Contact() {
                       placeholder="sarah@company.com"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className={`mt-1 w-full rounded-lg border px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:bg-[#1F1F1F] dark:text-[#F4F4F4] ${
+                      className={`mt-1 w-full rounded-lg border px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:bg-[#1F1F1F] dark:text-[#F4F4F4] ${
                         errors.email ? "border-red-400" : "border-[#E0E0E0] dark:border-[#393939]"
                       }`}
                     />
@@ -164,7 +164,7 @@ export default function Contact() {
                   <select
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                    className="mt-1 w-full rounded-lg border border-[#E0E0E0] bg-white px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:border-[#393939] dark:bg-[#1F1F1F] dark:text-[#F4F4F4]"
+                    className="mt-1 w-full rounded-lg border border-[#E0E0E0] bg-white px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:border-[#393939] dark:bg-[#1F1F1F] dark:text-[#F4F4F4]"
                   >
                     {contactContext?.serviceId && contactContext.subject && (
                       <option value={contactContext.subject}>{contactContext.subject}</option>
@@ -185,7 +185,7 @@ export default function Contact() {
                     placeholder="Tell us about your project requirements, timeline, or engineering needs..."
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className={`mt-1 w-full rounded-lg border px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:bg-[#1F1F1F] dark:text-[#F4F4F4] ${
+                    className={`mt-1 w-full rounded-lg border px-3.5 py-2.5 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:bg-[#1F1F1F] dark:text-[#F4F4F4] ${
                       errors.message ? "border-red-400" : "border-[#E0E0E0] dark:border-[#393939]"
                     }`}
                   />
@@ -208,7 +208,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full rounded-lg bg-[#FF462D] px-6 py-3 text-xs font-bold text-white shadow-sm hover:bg-[#E0301E] disabled:opacity-60 transition"
+                  className="w-full rounded-lg bg-[#5B47F5] px-6 py-3 text-xs font-bold text-white shadow-sm hover:bg-[#4634D6] disabled:opacity-60 transition"
                 >
                   {status === "submitting" ? "Sending..." : "Send Message →"}
                 </button>

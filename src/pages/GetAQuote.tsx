@@ -12,20 +12,20 @@ export default function GetAQuote() {
     <>
       <PageMeta
         title="Get a Project Scope &amp; Rate Estimate"
-        description="Request a tailored proposal for Custom Software Development or Dedicated Engineering Pods (Remote / On-Premise) with 48h talent matching."
+        description="Request a tailored proposal for any of our 12 core services, including Custom Software Development and Dedicated Development Teams."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">
         {/* Header */}
         <div className="max-w-3xl">
-          <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
+          <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
             Instant Scoping &amp; Proposal
           </span>
           <h1 className="mt-2 font-heading text-3xl sm:text-5xl font-bold tracking-tight text-[#161616] dark:text-[#F4F4F4]">
             Get Your Project Scope &amp; Rate Estimate
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#525252] dark:text-[#C6C6C6] leading-relaxed font-sans">
-            Tell us about your software project or dedicated engineering squad needs. An Engineering Director will deliver a tailored blueprint and proposal within 2 business hours.
+            Tell us about your project or team needs. A solutions architect will deliver a tailored proposal within 48 hours.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ export default function GetAQuote() {
         {/* Direct Email Note */}
         <div className="mt-8 text-xs text-[#525252] dark:text-[#A8A8A8] font-sans">
           Prefer to email directly? Reach our solutions architecture team at{" "}
-          <a href="mailto:contact@pranayansh.com" className="font-semibold text-[#FF462D] dark:text-[#FF7561] hover:underline">
+          <a href="mailto:contact@pranayansh.com" className="font-semibold text-[#5B47F5] dark:text-[#7B74FF] hover:underline">
             contact@pranayansh.com
           </a>
         </div>

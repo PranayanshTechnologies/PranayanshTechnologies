@@ -20,7 +20,7 @@ export function CostEstimatorWizard() {
     if (mode === "software") {
       navigate("/get-a-quote", {
         state: {
-          serviceId: "software-development",
+          serviceId: "custom-software-development",
           projectDescription: `Configured via Planner: Custom ${projectType} (${scopeTier} scope).`,
           timeframe: scopeTier === "mvp" ? "1 - 3 Months" : scopeTier === "growth" ? "3 - 6 Months" : "6+ Months",
         },
@@ -29,7 +29,7 @@ export function CostEstimatorWizard() {
       const trialText = seniority === "fresher" ? "45-Day Zero-Risk Trial" : "14-Day Risk-Free Trial";
       navigate("/get-a-quote", {
         state: {
-          serviceId: "dedicated-crew",
+          serviceId: "dedicated-development-teams",
           projectDescription: `Configured via Planner: Dedicated team of ${teamSize}x ${seniority.toUpperCase()} engineers (${deploymentLocation} deployment, ${trialText}).`,
           teamSize,
           seniorityLevel: seniority.toUpperCase(),

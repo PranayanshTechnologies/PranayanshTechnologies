@@ -8,28 +8,28 @@ import { services } from "../data/services";
 import { engagementModels } from "../data/engagementModels";
 import type { ServiceOffering } from "../types/content";
 
+type CategoryFilter = "all" | ServiceOffering["category"];
+
+const FILTERS: { id: CategoryFilter; label: string }[] = [
+  { id: "all", label: "All Services" },
+  { id: "engineering", label: "💻 Engineering" },
+  { id: "cloud-devops", label: "☁️ Cloud & DevOps" },
+  { id: "ai-data", label: "🧠 AI & Data" },
+  { id: "design", label: "🎨 Design" },
+  { id: "consulting", label: "🤝 Consulting & Teams" },
+  { id: "managed-marketing", label: "📈 Managed & Marketing" },
+];
+
 export default function Services() {
   const navigate = useNavigate();
-  const [activeFilter, setActiveFilter] = useState<"all" | "development" | "staffing">("all");
+  const [activeFilter, setActiveFilter] = useState<CategoryFilter>("all");
 
   const filteredServices = services.filter((s) => {
     if (activeFilter === "all") return true;
     return s.category === activeFilter;
   });
-  const coreServices = filteredServices.filter((service) => service.status === "core");
-  const emergingServices = filteredServices.filter((service) => service.status === "emerging");
 
   function handleCta(service: ServiceOffering) {
-    if (service.status === "emerging") {
-      navigate("/contact", {
-        state: {
-          serviceId: service.id,
-          subject: service.name,
-        },
-      });
-      return;
-    }
-
     navigate("/get-a-quote", {
       state: {
         serviceId: service.id,
@@ -41,38 +41,34 @@ export default function Services() {
   return (
     <>
       <PageMeta
-        title="Enterprise Software Engineering &amp; Dedicated Consulting Services"
-        description="End-to-end custom software development and dedicated engineering consulting with remote and on-premise deployment."
+        title="Our 12 Core Services"
+        description="Custom software, web & mobile development, cloud consulting, DevOps, AI & generative AI, UI/UX design, data engineering, digital transformation, dedicated teams, managed IT & SEO — one technology partner."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">
         {/* Header */}
         <div className="max-w-3xl">
-          <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
-            Enterprise Offerings
+          <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
+            Our Services
           </span>
           <h1 className="mt-2 font-heading text-3xl sm:text-5xl font-bold tracking-tight text-[#161616] dark:text-[#F4F4F4]">
-            Software Development &amp; Team Deployment
+            12 Services. One Technology Partner.
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#525252] dark:text-[#C6C6C6] leading-relaxed font-sans">
-            We deliver turnkey digital product engineering and provide flexible engineering pods—deployed remotely, on-premise at your office, or hybrid.
+            From custom software and cloud migration to AI, design, data engineering, and digital transformation — every service below is a first-class capability, not an afterthought.
           </p>
         </div>
 
         {/* Filter Pills */}
-        <div className="mt-10 flex gap-2 border-b border-[#E0E0E0] pb-4 dark:border-[#2D2D2D]">
-          {[
-            { id: "all", label: "All Capabilities" },
-            { id: "development", label: "🚀 Software Engineering (Turnkey)" },
-            { id: "staffing", label: "👥 Dedicated Consulting & Squads (Remote & On-Premise)" },
-          ].map((tab) => (
+        <div className="mt-10 flex flex-wrap gap-2 border-b border-[#E0E0E0] pb-4 dark:border-[#2D2D2D]">
+          {FILTERS.map((tab) => (
             <button
               key={tab.id}
               type="button"
-              onClick={() => setActiveFilter(tab.id as "all" | "development" | "staffing")}
+              onClick={() => setActiveFilter(tab.id)}
               className={`rounded-lg px-4 py-2 text-xs sm:text-sm font-semibold transition ${
                 activeFilter === tab.id
-                  ? "bg-[#FF462D] text-white shadow-xs"
+                  ? "bg-[#5B47F5] text-white shadow-xs"
                   : "bg-[#F4F4F4] text-[#525252] hover:bg-[#E0E0E0] dark:bg-[#1F1F1F] dark:text-[#C6C6C6] dark:hover:bg-[#262626]"
               }`}
             >
@@ -82,46 +78,25 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        {coreServices.length > 0 && (
-          <section className="mt-8" aria-labelledby="core-services-heading">
-            <h2 id="core-services-heading" className="font-heading text-xl font-bold text-[#161616] dark:text-[#F4F4F4]">
-              Core Engagement Models
-            </h2>
-            <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {coreServices.map((service) => (
-                <ServiceCard key={service.id} service={service} onCtaClick={handleCta} />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {emergingServices.length > 0 && (
-          <section className="mt-16 rounded-2xl border border-[#FFCCC4] bg-[#FFF8F6] p-6 sm:p-8 dark:border-[#7E190E] dark:bg-[#2A0E0A]" aria-labelledby="emerging-services-heading">
-            <div className="max-w-2xl">
-              <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">Growing Capabilities</span>
-              <h2 id="emerging-services-heading" className="mt-2 font-heading text-2xl font-bold text-[#161616] dark:text-[#F4F4F4]">
-                Explore What We Are Building Next
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-[#525252] dark:text-[#C6C6C6]">
-                These services are developing now. Register your interest and we will discuss the right path for your needs.
-              </p>
-            </div>
-            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {emergingServices.map((service) => (
-                <ServiceCard key={service.id} service={service} onCtaClick={handleCta} />
-              ))}
-            </div>
-          </section>
-        )}
+        <section className="mt-8" aria-labelledby="services-heading">
+          <h2 id="services-heading" className="sr-only">
+            Services
+          </h2>
+          <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredServices.map((service) => (
+              <ServiceCard key={service.id} service={service} onCtaClick={handleCta} />
+            ))}
+          </div>
+        </section>
 
         {/* Comparison Matrix */}
         <div className="mt-24">
           <div className="max-w-2xl">
-            <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
-              Engagement Comparison
+            <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
+              How We Engage
             </span>
             <h2 className="mt-1 font-heading text-2xl sm:text-3xl font-bold tracking-tight text-[#161616] dark:text-[#F4F4F4]">
-              Choose the Best Model for Your Organization
+              Choose the Best Delivery Model for Your Organization
             </h2>
           </div>
 
@@ -141,13 +116,13 @@ export default function Services() {
                   <tr key={m.id} className="hover:bg-[#F4F4F4]/70 dark:hover:bg-[#1F1F1F]/60">
                     <td className="px-5 py-4">
                       <p className="font-bold text-[#161616] dark:text-[#F4F4F4]">{m.name}</p>
-                      <p className="kicker-mono text-[11px] text-[#FF462D] dark:text-[#FF7561]">{m.subtitle}</p>
+                      <p className="kicker-mono text-[11px] text-[#5B47F5] dark:text-[#7B74FF]">{m.subtitle}</p>
                     </td>
                     <td className="px-5 py-4 text-[#525252] dark:text-[#A8A8A8] max-w-xs leading-relaxed text-xs font-sans">
                       {m.bestFor}
                     </td>
                     <td className="px-5 py-4 text-xs text-[#161616] dark:text-[#E0E0E0] font-medium font-sans">
-                      {m.id === "software-development" ? "Cloud / Milestone Delivery" : "Remote, On-Premise, Hybrid"}
+                      {m.id === "custom-software-development" ? "Cloud / Milestone Delivery" : "Remote, On-Premise, Hybrid"}
                     </td>
                     <td className="px-5 py-4 text-xs font-bold text-emerald-600 dark:text-emerald-400">
                       {m.onboardingTime}
@@ -156,7 +131,7 @@ export default function Services() {
                       <button
                         type="button"
                         onClick={() => navigate("/get-a-quote", { state: { serviceId: m.id } })}
-                        className="rounded-lg bg-[#F4F4F4] px-3.5 py-1.5 text-xs font-semibold text-[#161616] hover:bg-[#FF462D] hover:text-white transition dark:bg-[#1F1F1F] dark:text-[#E0E0E0] dark:hover:bg-[#FF462D]"
+                        className="rounded-lg bg-[#F4F4F4] px-3.5 py-1.5 text-xs font-semibold text-[#161616] hover:bg-[#5B47F5] hover:text-white transition dark:bg-[#1F1F1F] dark:text-[#E0E0E0] dark:hover:bg-[#5B47F5]"
                       >
                         Select →
                       </button>
@@ -176,11 +151,12 @@ export default function Services() {
         {/* Bottom CTA */}
         <CtaBanner
           heading="Ready to build software or expand your engineering team?"
-          body="Tell us about your requirements. We'll provide a transparent scope and rate estimate within 2 hours."
-          ctaLabel="Get a Quote &amp; Estimate"
+          body="Tell us about your requirements. We'll respond with a transparent scope and quote within 48 hours."
+          ctaLabel="Get a Quote"
           to="/get-a-quote"
         />
       </div>
     </>
   );
 }
+

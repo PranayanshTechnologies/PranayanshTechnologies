@@ -7,13 +7,13 @@ export default function Resources() {
     <>
       <PageMeta
         title="Engineering Insights &amp; Strategy Guides"
-        description="Guides and technical playbooks from Pranayansh Technologies on enterprise software engineering, cloud migrations, and production AI architectures."
+        description="Guides and technical playbooks from PRANAYANSH Technology on enterprise software engineering, cloud migrations, and production AI architectures."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">
         {/* Header */}
         <div className="max-w-3xl">
-          <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
+          <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
             Playbooks &amp; Research
           </span>
           <h1 className="mt-2 font-heading text-3xl sm:text-5xl font-bold tracking-tight text-[#161616] dark:text-[#F4F4F4]">
@@ -33,7 +33,7 @@ export default function Resources() {
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
+                  <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
                     {article.category}
                   </span>
                   <span className="font-mono text-[11px] text-[#8D8D8D]">
@@ -61,7 +61,7 @@ export default function Resources() {
               <div className="mt-6 pt-4 border-t border-[#E0E0E0] dark:border-[#2D2D2D]">
                 <a
                   href="/get-a-quote"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF462D] hover:text-[#BA2212] dark:text-[#FF7561] transition"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#5B47F5] hover:text-[#3827AB] dark:text-[#7B74FF] transition"
                 >
                   Discuss This Topic with an Architect →
                 </a>

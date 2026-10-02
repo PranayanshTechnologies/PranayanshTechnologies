@@ -32,7 +32,7 @@ export function TechBenchExplorer() {
   function handleHireTech(techName: string) {
     navigate("/get-a-quote", {
       state: {
-        serviceId: "on-demand-resources",
+        serviceId: "staff-augmentation",
         technologyNeed: techName,
         projectDescription: `Requesting senior engineers specialized in ${techName} with 48h deployment.`,
       },

@@ -11,7 +11,7 @@ export function CaseStudyDetailCard({ caseStudy }: CaseStudyDetailCardProps) {
   function handleDiscuss() {
     navigate("/get-a-quote", {
       state: {
-        serviceId: caseStudy.relatedServiceId || "software-development",
+        serviceId: caseStudy.relatedServiceId || "custom-software-development",
         projectDescription: `Interested in solution similar to: ${caseStudy.title}`,
       },
     });
@@ -21,7 +21,7 @@ export function CaseStudyDetailCard({ caseStudy }: CaseStudyDetailCardProps) {
     <div className="clean-card flex flex-col justify-between rounded-xl border border-[#E0E0E0] bg-white p-8 shadow-xs dark:border-[#2D2D2D] dark:bg-[#161616]">
       <div>
         <div className="flex items-center justify-between">
-          <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
+          <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
             {caseStudy.clientType}
           </span>
           <span className="font-mono text-xs text-[#8D8D8D]">
@@ -41,7 +41,7 @@ export function CaseStudyDetailCard({ caseStudy }: CaseStudyDetailCardProps) {
         <div className="mt-6 grid grid-cols-2 gap-4 rounded-lg bg-[#F4F4F4] p-4 dark:bg-[#1F1F1F]">
           {caseStudy.results.slice(0, 2).map((res, i) => (
             <div key={i}>
-              <p className="font-heading text-2xl font-bold text-[#FF462D] dark:text-[#FF7561]">{res.metric}</p>
+              <p className="font-heading text-2xl font-bold text-[#5B47F5] dark:text-[#7B74FF]">{res.metric}</p>
               <p className="text-xs text-[#525252] dark:text-[#A8A8A8] mt-0.5 font-sans">{res.label}</p>
             </div>
           ))}
@@ -64,7 +64,7 @@ export function CaseStudyDetailCard({ caseStudy }: CaseStudyDetailCardProps) {
         <button
           type="button"
           onClick={handleDiscuss}
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF462D] hover:text-[#BA2212] dark:text-[#FF7561] transition"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#5B47F5] hover:text-[#3827AB] dark:text-[#7B74FF] transition"
         >
           Discuss Similar Architecture &amp; Delivery →
         </button>

@@ -22,8 +22,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: [".NET Core", "C#", "AWS EKS", "Kafka", "PostgreSQL", "Terraform"],
     engagementType: "Dedicated Engineering Crew (5 Engineers)",
-    relatedServiceId: "dedicated-crew",
-    relatedIndustryId: "software-development-industry",
+    relatedServiceId: "dedicated-development-teams",
+    relatedIndustryId: "fintech-banking-payments",
     isPlaceholder: false,
   },
   {
@@ -43,8 +43,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: ["Microsoft Azure", "AKS", "Terraform", "Docker", "Node.js", "Redis"],
     engagementType: "Staff Augmentation (3 Senior Cloud Engineers)",
-    relatedServiceId: "on-demand-resources",
-    relatedIndustryId: "cloud-devops",
+    relatedServiceId: "cloud-consulting-migration",
+    relatedIndustryId: "ecommerce-retail",
     isPlaceholder: false,
   },
   {
@@ -64,8 +64,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: ["Python", "FastAPI", "LangChain", "OpenAI", "Pinecone", "React"],
     engagementType: "Turnkey Custom Software Development",
-    relatedServiceId: "software-development",
-    relatedIndustryId: "data-ai",
+    relatedServiceId: "ai-generative-ai-solutions",
+    relatedIndustryId: "healthcare-life-sciences",
     isPlaceholder: false,
   },
   {
@@ -86,7 +86,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["Flutter", "Dart", "Node.js", "GraphQL", "Firebase", "Fastlane"],
     engagementType: "Dedicated Mobile Crew (4 Engineers)",
     relatedServiceId: "mobile-app-development",
-    relatedIndustryId: "mobile-apps",
+    relatedIndustryId: "fintech-banking-payments",
     isPlaceholder: false,
   },
 ];

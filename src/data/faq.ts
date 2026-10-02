@@ -1,70 +1,92 @@
 import type { FaqEntry } from "../types/content";
 
 /**
- * FAQ entries covering Dedicated Consulting, Software Development, Pricing, Onboarding, and Security (FR-012).
+ * FAQ entries covering Services, AI, Cloud, Engagement, Security, Pricing & Partnership.
  */
 export const faq: FaqEntry[] = [
   {
-    id: "faq-hybrid-advantage",
-    question: "How does Pranayansh combine dedicated engineering consulting and custom software development?",
+    id: "faq-service-breadth",
+    question: "What services does PRANAYANSH Technology offer?",
     answer:
-      "We offer maximum agility: you can engage specialized technical consultants to plug into your existing teams (Dedicated Consultants), contract a complete dedicated squad (Dedicated Crew), or hand over full project requirements for turnkey end-to-end development with milestone-based delivery.",
-    topic: "staffing",
+      "We offer 12 core services spanning custom software, web and mobile development, cloud consulting and migration, DevOps and platform engineering, AI and generative AI solutions, UI/UX design, data engineering, digital transformation consulting, dedicated development teams, managed IT services, and SEO & digital marketing.",
+    topic: "services",
+  },
+  {
+    id: "faq-engagement-choice",
+    question: "How do I choose between project-based delivery, a dedicated team, or staff augmentation?",
+    answer:
+      "Project-based delivery suits teams that want us to own the full build end-to-end against milestones. Dedicated development teams suit companies with an ongoing roadmap who want a stable embedded squad. Staff augmentation suits teams with internal leadership that need fast specialist capacity. Our Get a Quote flow helps match you to the right model.",
+    topic: "engagement",
+  },
+  {
+    id: "faq-ai-approach",
+    question: "What is your approach to AI and Generative AI solutions?",
+    answer:
+      "We take an AI-first approach: embedding AI agents, enterprise chatbots, and document intelligence using OpenAI, Azure OpenAI, Claude, and Gemini, with retrieval-augmented generation (RAG) and vector search for grounded, accurate outputs under enterprise governance.",
+    topic: "ai",
+  },
+  {
+    id: "faq-cloud-platforms",
+    question: "Which cloud platforms do you support?",
+    answer:
+      "We design, migrate, and operate workloads on Microsoft Azure, AWS, and Google Cloud, using Infrastructure-as-Code (Terraform, Bicep) and Kubernetes for zero-downtime, cost-optimized deployments.",
+    topic: "cloud",
   },
   {
     id: "faq-vetting-standard",
-    question: "What is your developer vetting and screening process?",
+    question: "How are your engineers vetted?",
     answer:
-      "Only the top 3% of applicants join our talent network. Every engineer undergoes a 5-step screening: resume and background audit, live coding/algorithmic tests, system design defense with a principal architect, English communication assessment, and a 2-week risk-free trial on your project.",
-    topic: "staffing",
+      "Every engineer undergoes a structured screening: background audit, live coding/system-design assessment, communication evaluation, and a trial period on real project work before full engagement.",
+    topic: "engagement",
   },
   {
-    id: "faq-speed-to-hire",
-    question: "How fast can engineers start working with our team?",
+    id: "faq-speed-to-start",
+    question: "How fast can you start a project or deploy a team?",
     answer:
-      "For specialized technical consultants and pre-vetted bench technologies (.NET, React, AWS, Python, Node.js), candidates are matched within 24 to 48 hours. Dedicated crews of 3-6 engineers are typically assembled and ready for sprint kickoff within 3 to 5 business days.",
-    topic: "onboarding",
-  },
-  {
-    id: "faq-trial-guarantee",
-    question: "Is there a risk-free trial period?",
-    answer:
-      "Yes. Senior and lead engineers include a 14-Day Risk-Free Trial. Emerging developers and fresh engineering graduates include a comprehensive 45-Day Zero-Risk Trial Guarantee. If you are not 100% satisfied with performance within the trial window, you pay nothing or receive an immediate replacement at zero cost.",
-    topic: "onboarding",
+      "Staff augmentation specialists are typically matched within 24-48 hours. Dedicated development teams are assembled and ready for sprint kickoff within 3-5 business days. Project-based engagements begin with a detailed proposal within 3 days of discovery.",
+    topic: "engagement",
   },
   {
     id: "faq-ip-ownership",
-    question: "Who owns the Intellectual Property (IP) and source code?",
+    question: "Who owns the intellectual property (IP) and source code?",
     answer:
-      "You own 100% of all intellectual property, source code, designs, and assets created by our engineers from day one. All contracts include strict non-disclosure agreements (NDAs) and full IP assignment governed by US and international standards.",
+      "You own 100% of all intellectual property, source code, designs, and assets created by our team from day one, governed by clear NDAs and IP-assignment contracts.",
+    topic: "security",
+  },
+  {
+    id: "faq-security-compliance",
+    question: "How do you handle security and compliance?",
+    answer:
+      "We follow secure-by-design engineering practices aligned with industry standards relevant to your sector (e.g. PCI-DSS for payments, HIPAA for healthcare), including encrypted data handling, access controls, and regular security reviews.",
     topic: "security",
   },
   {
     id: "faq-timezone-alignment",
-    question: "How do your engineers handle timezone overlap and communication?",
+    question: "How do your teams handle timezone overlap and communication across India, the USA, Middle East & Europe?",
     answer:
-      "Our engineers work with a guaranteed 4 to 8 hours of daily overlap with US (EST, CST, PST) and European business hours. They join your native communication channels (Slack, Microsoft Teams, Jira, GitHub) and attend your daily standups and sprint planning.",
-    topic: "staffing",
+      "We structure engagements to guarantee daily overlap with your working hours, joining your native tools (Slack, Microsoft Teams, Jira, GitHub) and attending your standups and sprint ceremonies regardless of your region.",
+    topic: "partnership",
   },
   {
     id: "faq-billing-pricing",
-    question: "How does billing and invoicing work?",
+    question: "How does billing and pricing work?",
     answer:
-      "Dedicated consulting is billed on a transparent monthly cycle with detailed time tracking. Dedicated crews operate on a predictable monthly retainer. Turnkey software development projects are billed against predefined deliverable milestones with agreed acceptance criteria.",
+      "Pricing depends on engagement model: project-based work is billed against agreed milestones, dedicated teams operate on a predictable monthly retainer, and staff augmentation is billed hourly or time-and-materials. Request a tailored quote for your scope.",
     topic: "pricing",
   },
   {
-    id: "faq-turnkey-deliverables",
-    question: "What is included in a Turnkey Software Development contract?",
+    id: "faq-managed-services",
+    question: "Do you support us after launch?",
     answer:
-      "Turnkey projects include full lifecycle execution: product discovery, clickable UI/UX Figma prototypes, cloud-native architecture, automated test suites, CI/CD pipelines, production deployment, documentation, and a post-launch warranty period with ongoing bug fixes.",
-    topic: "development",
+      "Yes. Our Managed IT Services cover 24/7 monitoring, patching, release operations, and reliability reviews, so your platform stays secure and performant long after go-live.",
+    topic: "services",
   },
   {
-    id: "faq-scaling-flexibility",
-    question: "Can we scale team size up or down as project needs change?",
+    id: "faq-long-term-partnership",
+    question: "Do you work with us long-term, or only for single projects?",
     answer:
-      "Absolutely. You can add more engineers with 48 hours notice or scale down with a standard 14-day notice, giving you complete financial flexibility to match your product roadmap and funding cycles.",
-    topic: "pricing",
+      "Both. Many clients start with a single project or augmentation engagement and grow into a long-term technology partnership spanning multiple services as their roadmap evolves — that long-term relationship is one of our core values.",
+    topic: "partnership",
   },
 ];
+

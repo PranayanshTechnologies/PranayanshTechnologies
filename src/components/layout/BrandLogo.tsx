@@ -20,14 +20,14 @@ export function BrandLogo({ className = "", showSubtitle = true, size = "md" }: 
   };
 
   return (
-    <Link to="/" className={`inline-flex flex-col text-left group transition ${className}`}>
+    <Link to="/" className={`inline-flex flex-col text-right items-end group transition ${className}`}>
       {/* Brand Name Typography */}
-      <span className={`font-heading font-extrabold tracking-tight text-[#161616] dark:text-[#F4F4F4] leading-none transition-colors group-hover:text-[#FF462D] dark:group-hover:text-[#FF7561] ${titleSizes[size]}`}>
-        Pranayansh
+      <span className={`font-heading font-extrabold tracking-tight text-[#161616] dark:text-[#F4F4F6] leading-none transition-colors group-hover:text-brand-500 dark:group-hover:text-brand-300 ${titleSizes[size]}`}>
+        PRANAYANSH
       </span>
       {showSubtitle && (
-        <span className={`font-mono font-bold text-[#FF462D] dark:text-[#FF7561] tracking-widest uppercase mt-1 ${subtitleSizes[size]}`}>
-          Technologies
+        <span className={`font-mono font-bold text-brand-500 dark:text-brand-300 tracking-widest uppercase mt-1 ${subtitleSizes[size]}`}>
+          Technology
         </span>
       )}
     </Link>

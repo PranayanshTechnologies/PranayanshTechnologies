@@ -16,7 +16,7 @@ export function MultiStepQuoteForm({ initialState }: MultiStepQuoteFormProps) {
     company: initialState?.company ?? "",
     email: initialState?.email ?? "",
     phone: initialState?.phone ?? "",
-    serviceId: initialState?.serviceId ?? "software-development",
+    serviceId: initialState?.serviceId ?? "custom-software-development",
     technologyNeed: initialState?.technologyNeed ?? "",
     timeframe: initialState?.timeframe ?? "Within 1 Month",
     seniorityLevel: initialState?.seniorityLevel ?? "SENIOR",
@@ -117,9 +117,9 @@ export function MultiStepQuoteForm({ initialState }: MultiStepQuoteFormProps) {
               </label>
               <div className="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                 {[
-                  { id: "software-development", label: "Custom Software Dev", sub: "Turnkey Product Delivery" },
-                  { id: "dedicated-crew", label: "Dedicated Pod", sub: "Remote / On-Premise" },
-                  { id: "on-demand-resources", label: "Staff Augmentation", sub: "Hourly 48h Match" },
+                  { id: "custom-software-development", label: "Custom Software Dev", sub: "Project-Based Delivery" },
+                  { id: "dedicated-development-teams", label: "Dedicated Team", sub: "Remote / On-Premise" },
+                  { id: "staff-augmentation", label: "Staff Augmentation", sub: "Hourly 48h Match" },
                 ].map((s) => (
                   <button
                     key={s.id}

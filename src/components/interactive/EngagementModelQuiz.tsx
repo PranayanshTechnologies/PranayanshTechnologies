@@ -36,13 +36,13 @@ export function EngagementModelQuiz() {
 
   // Calculate winner model based on frequency of affinities
   const recommendedModelId = (() => {
-    if (selectedAnswers.length === 0) return "dedicated-crew";
+    if (selectedAnswers.length === 0) return "dedicated-development-teams";
     const counts: Record<string, number> = {};
     selectedAnswers.forEach((ans) => {
       counts[ans.modelAffinity] = (counts[ans.modelAffinity] || 0) + 1;
     });
 
-    let winner = "dedicated-crew";
+    let winner = "dedicated-development-teams";
     let max = -1;
     for (const [key, val] of Object.entries(counts)) {
       if (val > max) {

@@ -50,7 +50,7 @@ export function PersonaSwitcher() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <Link
               to="/get-a-quote"
-              state={{ serviceId: "software-development" }}
+              state={{ serviceId: "custom-software-development" }}
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-500/20 hover:bg-brand-700 transition"
             >
               Start a Project
@@ -60,10 +60,10 @@ export function PersonaSwitcher() {
             </Link>
 
             <Link
-              to="/case-studies"
+              to="/portfolio"
               className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-2xs hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 transition"
             >
-              View Case Studies &amp; Architecture
+              View Portfolio &amp; Case Studies
             </Link>
           </div>
         </div>
@@ -84,7 +84,7 @@ export function PersonaSwitcher() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <Link
               to="/get-a-quote"
-              state={{ serviceId: "dedicated-crew" }}
+              state={{ serviceId: "dedicated-development-teams" }}
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-500/20 hover:bg-brand-700 transition"
             >
               Hire Engineering Squad

@@ -6,10 +6,13 @@ import type { FaqEntry } from "../types/content";
 
 const TOPICS = [
   { id: "all", label: "All Questions" },
-  { id: "development", label: "Software Development" },
-  { id: "staffing", label: "Consulting & Vetting" },
-  { id: "pricing", label: "Pricing & Trials" },
-  { id: "security", label: "IP Ownership" },
+  { id: "services", label: "Services" },
+  { id: "ai", label: "AI" },
+  { id: "cloud", label: "Cloud" },
+  { id: "engagement", label: "Engagement Models" },
+  { id: "security", label: "Security & IP" },
+  { id: "pricing", label: "Pricing" },
+  { id: "partnership", label: "Partnership" },
 ];
 
 export default function Faq() {
@@ -36,21 +39,21 @@ export default function Faq() {
   return (
     <>
       <PageMeta
-        title="Frequently Asked Questions (FAQ) | Software &amp; Consulting"
-        description="Clear answers on software development, dedicated consulting models, 48h talent matching, IP ownership, and pricing."
+        title="Frequently Asked Questions (FAQ)"
+        description="Clear answers on our 12 services, AI & cloud solutions, engagement models, security, and pricing."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">
         {/* Header */}
         <div className="max-w-3xl">
-          <span className="kicker-mono text-xs font-bold text-[#FF462D] dark:text-[#FFA699]">
+          <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
             Knowledge Base
           </span>
           <h1 className="mt-2 font-heading text-3xl sm:text-5xl font-bold tracking-tight text-[#161616] dark:text-[#F4F4F4]">
             Frequently Asked Questions
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#525252] dark:text-[#C6C6C6] font-sans">
-            Answers regarding our software engineering delivery, remote/on-premise consulting squads, and 45-day trial guarantees.
+            Answers regarding our services, AI & cloud solutions, engagement models, security, and pricing.
           </p>
 
           {/* Search bar */}
@@ -60,7 +63,7 @@ export default function Faq() {
               placeholder="Search questions (e.g. trial, pricing, IP, freshers)..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 pl-10 text-xs shadow-2xs focus:border-[#FF462D] focus:outline-none dark:border-[#393939] dark:bg-[#1F1F1F] dark:text-[#F4F4F4]"
+              className="w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 pl-10 text-xs shadow-2xs focus:border-[#5B47F5] focus:outline-none dark:border-[#393939] dark:bg-[#1F1F1F] dark:text-[#F4F4F4]"
             />
             <svg
               className="absolute left-3.5 top-3.5 h-4 w-4 text-[#8D8D8D]"
@@ -83,7 +86,7 @@ export default function Faq() {
               onClick={() => setSelectedTopic(t.id)}
               className={`rounded-lg px-4 py-1.5 text-xs font-semibold transition ${
                 selectedTopic === t.id
-                  ? "bg-[#FF462D] text-white shadow-xs"
+                  ? "bg-[#5B47F5] text-white shadow-xs"
                   : "bg-[#F4F4F4] text-[#525252] hover:bg-[#E0E0E0] dark:bg-[#1F1F1F] dark:text-[#C6C6C6] dark:hover:bg-[#262626]"
               }`}
             >
@@ -110,7 +113,7 @@ export default function Faq() {
                   <span className="font-heading text-sm sm:text-base font-bold text-[#161616] dark:text-[#F4F4F4] pr-4">
                     {item.question}
                   </span>
-                  <span className="text-sm font-bold text-[#FF462D] dark:text-[#FFA699]">
+                  <span className="text-sm font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
                     {isOpen ? "−" : "+"}
                   </span>
                 </button>

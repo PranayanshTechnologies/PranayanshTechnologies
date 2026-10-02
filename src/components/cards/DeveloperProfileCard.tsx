@@ -11,7 +11,7 @@ export function DeveloperProfileCard({ profile }: DeveloperProfileCardProps) {
   function handleRequestTalent() {
     navigate("/get-a-quote", {
       state: {
-        serviceId: "on-demand-resources",
+        serviceId: "staff-augmentation",
         technologyNeed: profile.primarySkills.slice(0, 3).join(", "),
         seniorityLevel: profile.seniority,
         projectDescription: `Inquiring about profile ${profile.id} (${profile.roleTitle}) or engineers with similar stack.`,
