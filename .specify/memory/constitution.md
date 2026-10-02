@@ -1,19 +1,21 @@
 <!--
 Sync Impact Report
-Version change: 1.0.0 -> 2.0.0
-Modified principles:
-  - I. Small, Isolated Modules -> I. Clean, Maintainable Code (broadened, absorbs prior Type-Complete Boundaries)
-  - II. Type-Complete Boundaries -> merged into I. Clean, Maintainable Code
-  - III. Accessibility by Default -> II. Modern, Attractive UX (redefined; accessibility folded in as a supporting requirement)
-  - IV. Test-Backed Behavior -> V. No Automated Testing (NON-NEGOTIABLE) (policy reversed)
-  - V. Minimal Dependencies and Reproducible Builds -> IV. Minimal Dependencies (narrowed; build reproducibility moved to Technical Baseline)
-Added principles: III. Responsive Design
-Added sections: VI. Requirement Traceability and Verifiable Delivery
+Version change: 2.1.0 -> 2.1.1
+Modified principles: none (no engineering-process or governance change)
+Added principles: none
+Added sections: none
 Removed sections: none
-Deferred items: none (stack migration to React + Tailwind is an implementation task, tracked under Next Actions in the response, not this file)
+Rationale: Brand rename only — the product rebranded from "Pranayansh
+Technologies" (IT staffing-first) to "PRANAYANSH Technology" (full-service
+software engineering & IT consulting partner, 12 equal core services). The
+constitution's engineering principles were already brand-agnostic and require
+no substantive change; only the document title is updated for consistency
+with the current application and its README.
+Deferred items: none
 -->
 
-# Pranayansh Constitution
+# PRANAYANSH Technology Constitution
+
 
 ## Core Principles
 
@@ -102,4 +104,4 @@ Compliance review is required on every merge request or equivalent review gate.
 Any unresolved violation blocks merge until the code or the constitution is
 updated to restore compliance.
 
-**Version**: 2.1.0 | **Ratified**: 2026-07-28 | **Last Amended**: 2026-08-28
+**Version**: 2.1.1 | **Ratified**: 2026-07-28 | **Last Amended**: 2026-10-02

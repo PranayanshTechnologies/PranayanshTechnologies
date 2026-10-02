@@ -86,9 +86,11 @@ export function CoreServicesEngagementSection() {
             key={item.title}
             className="clean-card rounded-xl border border-[#E0E0E0] bg-white p-6 shadow-xs dark:border-[#2D2D2D] dark:bg-[#121212]"
           >
-            <span className="text-2xl">{item.icon}</span>
-            <h3 className="mt-3 font-heading text-sm font-bold text-[#161616] dark:text-[#F4F4F6]">{item.title}</h3>
-            <p className="mt-2 text-xs text-[#525252] dark:text-[#A8A8A8] leading-relaxed font-sans">{item.desc}</p>
+            <div className="flex items-center gap-3">
+              <span className="text-3xl leading-none">{item.icon}</span>
+              <h3 className="font-heading text-base font-bold text-[#161616] dark:text-[#F4F4F6]">{item.title}</h3>
+            </div>
+            <p className="mt-3 text-sm text-[#525252] dark:text-[#A8A8A8] leading-relaxed font-sans">{item.desc}</p>
           </div>
         ))}
       </div>
