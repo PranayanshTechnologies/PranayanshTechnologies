@@ -1,7 +1,7 @@
 import type { ServiceOffering } from "../types/content";
 
 /**
- * The 12 core service lines of PRANAYANSH Technology — every offering is a
+ * The 12 core service lines of PRANAYANSH Technologies — every offering is a
  * first-class, equally-weighted capability (no "emerging" vs "core" split).
  */
 export const services: ServiceOffering[] = [

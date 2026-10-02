@@ -1,7 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { StickyContactBar } from "./components/cta/StickyContactBar";
+import { DurgotsavRoutes } from "./features/durgotsav";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import AiSolutions from "./pages/AiSolutions";
@@ -18,9 +19,20 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 /**
  * Root application component: shared layout (Navbar + Footer + StickyContactBar)
- * with routes for all 13 pages.
+ * with routes for all 13 pages and temporary Durgotsav sub-router.
  */
 export default function App() {
+  const location = useLocation();
+  const isDurgotsav = location.pathname.startsWith("/durgotsav");
+
+  if (isDurgotsav) {
+    return (
+      <Routes>
+        <Route path="/durgotsav/*" element={<DurgotsavRoutes />} />
+      </Routes>
+    );
+  }
+
   return (
     <div className="flex min-h-screen flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-brand-500 selection:text-white">
       <Navbar />

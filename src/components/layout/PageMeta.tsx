@@ -5,7 +5,7 @@ interface PageMetaProps {
   description: string;
 }
 
-const SITE_NAME = "PRANAYANSH Technology";
+const SITE_NAME = "PRANAYANSH Technologies";
 
 /**
  * Sets a unique document title and meta description on mount for the current

@@ -1,4 +1,4 @@
-# PRANAYANSH Technology
+# PRANAYANSH Technologies
 
 [![Website](https://img.shields.io/badge/Official_Website-pranayansh.com-5B47F5?style=flat-square&logo=google-chrome&logoColor=white)](https://pranayansh.com)
 [![Global Delivery](https://img.shields.io/badge/Markets-India_%7C_USA_%7C_Middle_East_%7C_Europe-161616?style=flat-square)](https://pranayansh.com/about)
@@ -12,7 +12,7 @@
 
 ## About Us — Who We Are
 
-**PRANAYANSH Technology** is a next-generation software engineering and IT consulting company. We help startups, SMBs, and enterprises turn ideas into scalable digital products through world-class engineering, strategic consulting, and modern technology expertise.
+**PRANAYANSH Technologies** is a next-generation software engineering and IT consulting company. We help startups, SMBs, and enterprises turn ideas into scalable digital products through world-class engineering, strategic consulting, and modern technology expertise.
 
 **Vision**: To become a globally trusted technology partner recognized for innovation, engineering excellence, and customer success.
 
@@ -77,7 +77,7 @@ Alongside client engagements, we incubate our own SaaS products. See the "What W
 
 ## This Repository
 
-This repo contains the PRANAYANSH Technology marketing website: a single-page application with 13 routes (Home, Services, AI Solutions, Cloud Services, Industries, Portfolio, About, Careers, Resources, Get a Quote, Contact, FAQ, Privacy Policy).
+This repo contains the PRANAYANSH Technologies marketing website: a single-page application with 13 routes (Home, Services, AI Solutions, Cloud Services, Industries, Portfolio, About, Careers, Resources, Get a Quote, Contact, FAQ, Privacy Policy).
 
 ### Tech Stack
 
@@ -124,5 +124,5 @@ npm run build     # type-check (tsc) + production build
 
 ---
 
-&copy; 2026 **PRANAYANSH Technology**. All rights reserved.
+&copy; 2026 **PRANAYANSH Technologies**. All rights reserved.
 

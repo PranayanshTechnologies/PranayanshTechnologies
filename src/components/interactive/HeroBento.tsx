@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ParticleConstellation } from "./ParticleConstellation";
+import { DurgotsavPromoCard } from "../../features/durgotsav";
 
 export function HeroBento() {
   return (
@@ -31,7 +32,7 @@ export function HeroBento() {
 
       {/* 3. Punchy, Clear Subtitle */}
       <p className="relative z-10 mx-auto mt-6 max-w-3xl text-base text-[#525252] dark:text-[#C6C6C6] sm:text-xl leading-relaxed font-sans">
-        PRANAYANSH Technology is a global software engineering and IT consulting partner — custom software, cloud, AI, and digital transformation for startups, SMBs, and enterprises.
+        PRANAYANSH Technologies is a global software engineering and IT consulting partner — custom software, cloud, AI, and digital transformation for startups, SMBs, and enterprises.
       </p>
 
       {/* 4. Action Buttons */}
@@ -54,6 +55,9 @@ export function HeroBento() {
           Explore Our 12 Services
         </Link>
       </div>
+
+      {/* Temporary Durgotsav 2026 Promotional Card */}
+      <DurgotsavPromoCard />
     </div>
   );
 }

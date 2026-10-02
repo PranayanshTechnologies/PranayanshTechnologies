@@ -22,7 +22,7 @@ export default function CloudServices() {
     <>
       <PageMeta
         title="Cloud Consulting, Migration & DevOps"
-        description="PRANAYANSH Technology delivers zero-downtime Azure, AWS & Google Cloud migrations, Kubernetes platform engineering, and DevOps enablement."
+        description="PRANAYANSH Technologies delivers zero-downtime Azure, AWS & Google Cloud migrations, Kubernetes platform engineering, and DevOps enablement."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">

@@ -27,7 +27,7 @@ export function BrandLogo({ className = "", showSubtitle = true, size = "md" }: 
       </span>
       {showSubtitle && (
         <span className={`font-mono font-bold text-brand-500 dark:text-brand-300 tracking-widest uppercase mt-1 ${subtitleSizes[size]}`}>
-          Technology
+          Technologies
         </span>
       )}
     </Link>

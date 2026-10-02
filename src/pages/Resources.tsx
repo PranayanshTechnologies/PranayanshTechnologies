@@ -7,7 +7,7 @@ export default function Resources() {
     <>
       <PageMeta
         title="Engineering Insights &amp; Strategy Guides"
-        description="Guides and technical playbooks from PRANAYANSH Technology on enterprise software engineering, cloud migrations, and production AI architectures."
+        description="Guides and technical playbooks from PRANAYANSH Technologies on enterprise software engineering, cloud migrations, and production AI architectures."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">

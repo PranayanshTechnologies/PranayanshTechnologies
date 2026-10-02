@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <PageMeta
         title="Software Engineering & IT Consulting Partner"
-        description="PRANAYANSH Technology: global software engineering and IT consulting for custom software, cloud, AI, and digital transformation. Innovate. Build. Scale."
+        description="PRANAYANSH Technologies: global software engineering and IT consulting for custom software, cloud, AI, and digital transformation. Innovate. Build. Scale."
       />
 
       {/* 1. Full-Width Hero Section */}

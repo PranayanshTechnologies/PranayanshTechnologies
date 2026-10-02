@@ -2,7 +2,7 @@ import type { DeveloperProfile } from "../types/content";
 
 /**
  * Anonymized representative sample of vetted senior talent on the
- * PRANAYANSH Technology bench ready for immediate or 2-week deployment.
+ * PRANAYANSH Technologies bench ready for immediate or 2-week deployment.
  */
 export const developerProfiles: DeveloperProfile[] = [
   {

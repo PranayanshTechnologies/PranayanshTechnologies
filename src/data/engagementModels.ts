@@ -10,7 +10,7 @@ export const engagementModels: EngagementModel[] = [
     name: "Project-Based Delivery",
     subtitle: "Full Product Lifecycle & Milestone Delivery",
     description:
-      "PRANAYANSH Technology takes full ownership of UI/UX design, architecture, engineering, QA, and deployment with guaranteed milestone delivery and warranty.",
+      "PRANAYANSH Technologies takes full ownership of UI/UX design, architecture, engineering, QA, and deployment with guaranteed milestone delivery and warranty.",
     bestFor: "Startups, scaleups, and enterprises looking for a dedicated engineering partner to build a new product or modernize existing systems.",
     managementResponsibility: "PRANAYANSH Owned",
     billingStructure: "Fixed Milestone",

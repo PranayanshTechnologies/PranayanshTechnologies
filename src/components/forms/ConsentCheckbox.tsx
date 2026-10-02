@@ -22,7 +22,7 @@ export function ConsentCheckbox({ checked, onChange, id = "consent" }: ConsentCh
         className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-brand-600 focus:ring-2 focus:ring-brand-500"
       />
       <label htmlFor={id} className="text-sm text-gray-600 dark:text-gray-300">
-        I consent to PRANAYANSH Technology collecting and using this information as
+        I consent to PRANAYANSH Technologies collecting and using this information as
         described in the{" "}
         <Link to="/privacy-policy" className="text-brand-600 underline hover:text-brand-700">
           Privacy Policy

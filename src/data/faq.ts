@@ -6,7 +6,7 @@ import type { FaqEntry } from "../types/content";
 export const faq: FaqEntry[] = [
   {
     id: "faq-service-breadth",
-    question: "What services does PRANAYANSH Technology offer?",
+    question: "What services does PRANAYANSH Technologies offer?",
     answer:
       "We offer 12 core services spanning custom software, web and mobile development, cloud consulting and migration, DevOps and platform engineering, AI and generative AI solutions, UI/UX design, data engineering, digital transformation consulting, dedicated development teams, managed IT services, and SEO & digital marketing.",
     topic: "services",

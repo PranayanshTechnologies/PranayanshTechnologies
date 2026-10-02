@@ -12,7 +12,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <BrandLogo size="md" />
             <p className="mt-4 text-xs leading-relaxed text-[#525252] dark:text-[#A8A8A8] max-w-sm font-sans">
-              Innovate. Build. Scale. PRANAYANSH Technology is a global software engineering and IT consulting partner for custom software, cloud, AI, and digital transformation — serving India, the USA, the Middle East, Europe, and remote-first teams worldwide.
+              Innovate. Build. Scale. PRANAYANSH Technologies is a global software engineering and IT consulting partner for custom software, cloud, AI, and digital transformation — serving India, the USA, the Middle East, Europe, and remote-first teams worldwide.
             </p>
           </div>
 
@@ -125,7 +125,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#E0E0E0] pt-6 text-xs text-[#525252] dark:border-[#2D2D2D] dark:text-[#8D8D8D]">
-          <p>&copy; {year} PRANAYANSH Technology. All rights reserved.</p>
+          <p>&copy; {year} PRANAYANSH Technologies. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link to="/privacy-policy" className="hover:text-[#5B47F5]">Privacy Policy</Link>
             <span>•</span>

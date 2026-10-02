@@ -1,7 +1,7 @@
 // Shared TypeScript interfaces for all structured content, interactive tools,
-// and form-submission payloads used across PRANAYANSH Technology.
+// and form-submission payloads used across PRANAYANSH Technologies.
 
-/** One of the 12 core service lines offered by PRANAYANSH Technology. */
+/** One of the 12 core service lines offered by PRANAYANSH Technologies. */
 export interface ServiceOffering {
   id: string;
   name: string;

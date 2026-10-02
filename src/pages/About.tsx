@@ -14,21 +14,21 @@ export default function About() {
   return (
     <>
       <PageMeta
-        title="About PRANAYANSH Technology | Enterprise Software &amp; Leadership"
-        description="Learn how PRANAYANSH Technology architects mission-critical digital products and deploys high-velocity dedicated engineering squads."
+        title="About PRANAYANSH Technologies | Enterprise Software &amp; Leadership"
+        description="Learn how PRANAYANSH Technologies architects mission-critical digital products and deploys high-velocity dedicated engineering squads."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">
         {/* 1. Header with Kicker */}
         <div className="max-w-4xl">
           <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">
-            About PRANAYANSH Technology
+            About PRANAYANSH Technologies
           </span>
           <h1 className="mt-2 font-heading text-3xl sm:text-5xl font-bold tracking-tight text-[#161616] dark:text-[#F4F4F4]">
             Engineering Authority. Scaled for Global Velocity.
           </h1>
           <p className="mt-5 text-base sm:text-lg text-[#525252] dark:text-[#C6C6C6] leading-relaxed font-sans">
-            PRANAYANSH Technology is a next-generation software engineering and IT consulting company. Our vision is to become a globally trusted technology partner recognized for innovation, engineering excellence, and customer success — and our mission is to empower organizations with modern digital solutions through software engineering, cloud transformation, AI innovation, and expert consulting.
+            PRANAYANSH Technologies is a next-generation software engineering and IT consulting company. Our vision is to become a globally trusted technology partner recognized for innovation, engineering excellence, and customer success — and our mission is to empower organizations with modern digital solutions through software engineering, cloud transformation, AI innovation, and expert consulting.
           </p>
         </div>
 
@@ -273,7 +273,7 @@ export default function About() {
         <div className="mt-16 max-w-3xl">
           <span className="kicker-mono text-xs font-bold text-[#5B47F5] dark:text-[#9FA3FF]">Competitive Positioning</span>
           <p className="mt-2 text-sm text-[#525252] dark:text-[#C6C6C6] leading-relaxed font-sans">
-            Unlike pure staffing firms, we deliver full end-to-end product engineering. Unlike legacy IT consultancies, we take an AI-first, cloud-native approach. We combine enterprise-grade security and scalability with startup-speed delivery — positioning PRANAYANSH Technology as a premium, long-term technology partner for organizations that have outgrown generic vendors. We're also incubating our own SaaS products alongside client work — see our Products showcase on the homepage.
+            Unlike pure staffing firms, we deliver full end-to-end product engineering. Unlike legacy IT consultancies, we take an AI-first, cloud-native approach. We combine enterprise-grade security and scalability with startup-speed delivery — positioning PRANAYANSH Technologies as a premium, long-term technology partner for organizations that have outgrown generic vendors. We're also incubating our own SaaS products alongside client work — see our Products showcase on the homepage.
           </p>
         </div>
 

@@ -1,0 +1,45 @@
+/* Scoped styles for Durgotsav Event Management */
+
+.durgotsav-festive-bg {
+  background: radial-gradient(circle at 50% 0%, rgba(245, 165, 36, 0.12) 0%, rgba(225, 29, 72, 0.05) 45%, transparent 75%);
+}
+
+.durgotsav-card-glow {
+  box-shadow: 0 4px 20px -2px rgba(245, 165, 36, 0.12);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.durgotsav-card-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -4px rgba(245, 165, 36, 0.22);
+}
+
+.durgotsav-gold-gradient {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+}
+
+.durgotsav-festive-gradient-text {
+  background: linear-gradient(135deg, #f59e0b 0%, #e11d48 50%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.durgotsav-gold-border {
+  border-image: linear-gradient(to right, #f59e0b, #e11d48) 1;
+}
+
+/* Festive Diya shimmer animation */
+@keyframes festive-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-festive-pulse {
+  animation: festive-pulse 3s infinite ease-in-out;
+}

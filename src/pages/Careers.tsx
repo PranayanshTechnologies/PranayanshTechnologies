@@ -134,7 +134,7 @@ export default function Careers() {
   return (
     <>
       <PageMeta
-        title="Open Engineering Roles &amp; Talent Bench | PRANAYANSH Technology"
+        title="Open Engineering Roles &amp; Talent Bench | PRANAYANSH Technologies"
         description="Explore open engineering positions across India, US, and EU timezones. Join the PRANAYANSH talent network for high-impact software delivery."
       />
 

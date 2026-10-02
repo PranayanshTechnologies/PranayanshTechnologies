@@ -16,7 +16,7 @@ export default function Portfolio() {
     <>
       <PageMeta
         title="Portfolio & Case Studies"
-        description="Explore how PRANAYANSH Technology builds custom software, cloud platforms, and AI solutions for startups, SMBs, and enterprises."
+        description="Explore how PRANAYANSH Technologies builds custom software, cloud platforms, and AI solutions for startups, SMBs, and enterprises."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">
@@ -29,7 +29,7 @@ export default function Portfolio() {
             Portfolio: Engineering Outcomes &amp; Architecture
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#525252] dark:text-[#C6C6C6] leading-relaxed font-sans">
-            Illustrative architectural modernizations, cloud migrations, AI solutions, and product deliveries representative of how PRANAYANSH Technology engineering teams work.
+            Illustrative architectural modernizations, cloud migrations, AI solutions, and product deliveries representative of how PRANAYANSH Technologies engineering teams work.
           </p>
         </div>
 

@@ -40,7 +40,7 @@ export default function AiSolutions() {
     <>
       <PageMeta
         title="AI & Generative AI Solutions"
-        description="PRANAYANSH Technology builds AI agents, enterprise chatbots, and document intelligence using OpenAI, Azure OpenAI, Claude, and Gemini."
+        description="PRANAYANSH Technologies builds AI agents, enterprise chatbots, and document intelligence using OpenAI, Azure OpenAI, Claude, and Gemini."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">

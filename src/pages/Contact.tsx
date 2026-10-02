@@ -56,7 +56,7 @@ export default function Contact() {
     <>
       <PageMeta
         title="Contact Us | Technical Consultation &amp; Dedicated Squads"
-        description="Get in touch with PRANAYANSH Technology for custom software development consultations or engineering team advisory."
+        description="Get in touch with PRANAYANSH Technologies for custom software development consultations or engineering team advisory."
       />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-16 sm:py-24">

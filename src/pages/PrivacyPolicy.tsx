@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
     <>
       <PageMeta
         title="Privacy Policy"
-        description="How PRANAYANSH Technology collects, uses, and protects information submitted through our Get a Quote, Contact, and Careers forms."
+        description="How PRANAYANSH Technologies collects, uses, and protects information submitted through our Get a Quote, Contact, and Careers forms."
       />
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">
