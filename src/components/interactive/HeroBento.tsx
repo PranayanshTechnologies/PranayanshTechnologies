@@ -56,7 +56,7 @@ export function HeroBento() {
           data-analytics-cta="hero_explore_services"
           data-analytics-location="hero"
           data-analytics-destination="/services"
-          className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg border border-[#393939] bg-white/90 px-8 py-4 text-sm font-semibold text-white dark:border-[#4C4C4C] dark:bg-[#121212]/90 dark:text-[#F4F4F6] dark:hover:bg-[#262626] backdrop-blur-md transition font-sans"
+          className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg border border-[#D4D4D8] bg-white/90 px-8 py-4 text-sm font-semibold text-[#161616] shadow-2xs hover:bg-[#F4F4F4] hover:border-[#A1A1AA] dark:border-[#4C4C4C] dark:bg-[#121212]/90 dark:text-[#F4F4F6] dark:hover:bg-[#262626] dark:hover:border-[#6B7280] backdrop-blur-md transition font-sans"
         >
           Explore Our 12 Services
         </Link>
