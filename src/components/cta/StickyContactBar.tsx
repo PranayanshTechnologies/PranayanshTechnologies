@@ -42,6 +42,9 @@ export function StickyContactBar() {
         <div className="flex w-full sm:w-auto items-center gap-2">
           <Link
             to="/get-a-quote"
+            data-analytics-cta="request_engineers_sticky_bar"
+            data-analytics-location="sticky_bar"
+            data-analytics-destination="/get-a-quote"
             className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 rounded-xl bg-brand-600 px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-brand-700 transition"
           >
             Request Engineers
@@ -51,6 +54,9 @@ export function StickyContactBar() {
           </Link>
           <Link
             to="/services"
+            data-analytics-cta="compare_models_sticky_bar"
+            data-analytics-location="sticky_bar"
+            data-analytics-destination="/services"
             className="hidden sm:inline-flex rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
           >
             Compare Models

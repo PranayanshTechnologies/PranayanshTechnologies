@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { trackInteractiveTool, trackCtaClick } from "../../analytics";
 
 type PlannerMode = "software" | "staffing";
 
@@ -17,6 +18,27 @@ export function CostEstimatorWizard() {
   const [seniority, setSeniority] = useState<"fresher" | "senior" | "lead">("fresher");
 
   function handleRequestProposal() {
+    trackInteractiveTool({
+      toolName: "cost_estimator",
+      action: "complete",
+      result: mode === "software" ? `${projectType}_${scopeTier}` : `team_${teamSize}_${seniority}`,
+      estimatedValue:
+        mode === "software"
+          ? scopeTier === "mvp"
+            ? 15000
+            : scopeTier === "growth"
+            ? 35000
+            : 75000
+          : teamSize * 3000,
+    });
+
+    trackCtaClick({
+      ctaName: "estimator_request_proposal",
+      ctaLocation: "pricing_estimator",
+      ctaText: "Request Customized Scope & Proposal",
+      destinationUrl: "/get-a-quote",
+    });
+
     if (mode === "software") {
       navigate("/get-a-quote", {
         state: {

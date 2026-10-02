@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ConsentCheckbox } from "./ConsentCheckbox";
 import { submitForm } from "../../lib/submitForm";
+import {
+  trackFormStart,
+  trackFormStep,
+  trackLeadGeneration,
+  trackFormFailure,
+} from "../../analytics";
 import type { QuoteRequest } from "../../types/content";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -11,6 +17,7 @@ interface MultiStepQuoteFormProps {
 
 export function MultiStepQuoteForm({ initialState }: MultiStepQuoteFormProps) {
   const [step, setStep] = useState<number>(1);
+  const hasTrackedStart = useRef<boolean>(false);
   const [form, setForm] = useState<QuoteRequest>({
     name: initialState?.name ?? "",
     company: initialState?.company ?? "",
@@ -29,6 +36,13 @@ export function MultiStepQuoteForm({ initialState }: MultiStepQuoteFormProps) {
   const [errors, setErrors] = useState<Partial<Record<keyof QuoteRequest, string>>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  function triggerFormStart() {
+    if (!hasTrackedStart.current) {
+      hasTrackedStart.current = true;
+      trackFormStart("quote_form", "Get a Quote", "quote_request");
+    }
+  }
 
   function validateStep(currentStep: number): boolean {
     const next: Partial<Record<keyof QuoteRequest, string>> = {};
@@ -53,13 +67,16 @@ export function MultiStepQuoteForm({ initialState }: MultiStepQuoteFormProps) {
   }
 
   function handleNext() {
+    triggerFormStart();
     if (validateStep(1)) {
+      trackFormStep("quote_form", 2, "requirements_and_contact");
       setStep(2);
     }
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    triggerFormStart();
     if (!validateStep(2)) return;
 
     setStatus("submitting");
@@ -68,9 +85,20 @@ export function MultiStepQuoteForm({ initialState }: MultiStepQuoteFormProps) {
     const result = await submitForm({ formType: "quote", payload: form });
     if (result.ok) {
       setStatus("success");
+      trackLeadGeneration({
+        leadType: "quote_request",
+        serviceId: form.serviceId,
+        company: form.company,
+        timeframe: form.timeframe,
+        seniorityLevel: form.seniorityLevel,
+        teamSize: form.teamSize,
+        contactMethod: form.preferredContactMethod,
+      });
     } else {
       setStatus("error");
-      setSubmitError(result.error ?? "Submission failed. Please try again.");
+      const err = result.error ?? "Submission failed. Please try again.";
+      setSubmitError(err);
+      trackFormFailure("quote_form", err);
     }
   }
 

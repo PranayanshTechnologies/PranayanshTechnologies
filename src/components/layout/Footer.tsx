@@ -14,6 +14,15 @@ export function Footer() {
             <p className="mt-4 text-xs leading-relaxed text-[#525252] dark:text-[#A8A8A8] max-w-sm font-sans">
               Innovate. Build. Scale. PRANAYANSH Technologies is a global software engineering and IT consulting partner for custom software, cloud, AI, and digital transformation — serving India, the USA, the Middle East, Europe, and remote-first teams worldwide.
             </p>
+            <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-[#525252] dark:text-[#A8A8A8] font-sans">
+              <a href="mailto:contact@pranayansh.com" className="text-[#5B47F5] dark:text-[#7B74FF] hover:underline font-medium">
+                contact@pranayansh.com
+              </a>
+              <span>•</span>
+              <a href="tel:+919220229272" className="text-[#5B47F5] dark:text-[#7B74FF] hover:underline font-medium">
+                +91 92202 29272
+              </a>
+            </div>
           </div>
 
           {/* Col 2: Services */}
@@ -43,7 +52,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/get-a-quote" className="text-[#5B47F5] font-bold dark:text-[#7B74FF] hover:underline">
+                <Link
+                  to="/get-a-quote"
+                  data-analytics-cta="footer_get_quote"
+                  data-analytics-location="footer"
+                  data-analytics-destination="/get-a-quote"
+                  className="text-[#5B47F5] font-bold dark:text-[#7B74FF] hover:underline"
+                >
                   Get a Quote →
                 </Link>
               </li>

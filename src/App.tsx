@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { StickyContactBar } from "./components/cta/StickyContactBar";
 import { DurgotsavRoutes } from "./features/durgotsav";
+import { initAnalytics, usePageTracking, useAutoTracking } from "./analytics";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import AiSolutions from "./pages/AiSolutions";
@@ -23,6 +25,15 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
  */
 export default function App() {
   const location = useLocation();
+
+  // Initialize GTM/GA4 and global tracking listeners
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
+  usePageTracking();
+  useAutoTracking();
+
   const isDurgotsav = location.pathname.startsWith("/durgotsav");
 
   if (isDurgotsav) {

@@ -44,6 +44,9 @@ export function CtaBanner({
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
           <Link
             to={to}
+            data-analytics-cta="cta_banner_primary"
+            data-analytics-location="cta_banner"
+            data-analytics-destination={to}
             className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-white px-8 py-3.5 text-sm font-bold text-[#161616] shadow-lg transition hover:bg-[#F4F4F4] font-sans"
           >
             {ctaLabel}
@@ -54,6 +57,9 @@ export function CtaBanner({
 
           <Link
             to={secondaryTo}
+            data-analytics-cta="cta_banner_secondary"
+            data-analytics-location="cta_banner"
+            data-analytics-destination={secondaryTo}
             className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg border border-white/40 bg-black/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-black/20 font-sans"
           >
             {secondaryLabel}

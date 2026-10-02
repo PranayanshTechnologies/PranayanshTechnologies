@@ -5,6 +5,11 @@ import { ConsentCheckbox } from "../components/forms/ConsentCheckbox";
 import { technologies } from "../data/technologies";
 import { jobListings, type JobListing } from "../data/jobs";
 import { submitForm } from "../lib/submitForm";
+import {
+  trackFormStart,
+  trackLeadGeneration,
+  trackFormFailure,
+} from "../analytics";
 import type { CandidateInterestSubmission } from "../types/content";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -19,7 +24,15 @@ export default function Careers() {
 
   // Application Form State
   const formRef = useRef<HTMLDivElement | null>(null);
+  const hasTrackedStart = useRef<boolean>(false);
   const [selectedRoleTitle, setSelectedRoleTitle] = useState<string>("");
+
+  function triggerFormStart() {
+    if (!hasTrackedStart.current) {
+      hasTrackedStart.current = true;
+      trackFormStart("career_form", "Join Talent Bench", "career_interest");
+    }
+  }
 
   const [form, setForm] = useState<CandidateInterestSubmission>({
     name: "",
@@ -109,6 +122,7 @@ export default function Careers() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    triggerFormStart();
     if (!validate()) return;
 
     setStatus("submitting");
@@ -125,9 +139,16 @@ export default function Careers() {
 
     if (result.ok) {
       setStatus("success");
+      trackLeadGeneration({
+        leadType: "career_interest",
+        seniorityLevel: form.yearsOfExperience,
+        contactMethod: "career_form",
+      });
     } else {
       setStatus("error");
-      setSubmitError(result.error ?? "Submission failed. Please try again.");
+      const err = result.error ?? "Submission failed. Please try again.";
+      setSubmitError(err);
+      trackFormFailure("career_form", err);
     }
   }
 

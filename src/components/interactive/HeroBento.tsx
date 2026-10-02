@@ -40,6 +40,9 @@ export function HeroBento() {
         <Link
           to="/get-a-quote"
           state={{ serviceId: "custom-software-development" }}
+          data-analytics-cta="hero_get_consultation"
+          data-analytics-location="hero"
+          data-analytics-destination="/get-a-quote"
           className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-[#5B47F5] px-8 py-4 text-sm font-semibold text-white shadow-md hover:bg-[#4634D6] transition font-sans"
         >
           Get a Free Consultation
@@ -50,7 +53,10 @@ export function HeroBento() {
 
         <Link
           to="/services"
-          className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg border border-[#393939] bg-white/90 px-8 py-4 text-sm font-semibold text-[#161616] shadow-2xs hover:bg-[#F4F4F4] dark:border-[#4C4C4C] dark:bg-[#121212]/90 dark:text-[#F4F4F6] dark:hover:bg-[#262626] backdrop-blur-md transition font-sans"
+          data-analytics-cta="hero_explore_services"
+          data-analytics-location="hero"
+          data-analytics-destination="/services"
+          className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg border border-[#393939] bg-white/90 px-8 py-4 text-sm font-semibold text-white dark:border-[#4C4C4C] dark:bg-[#121212]/90 dark:text-[#F4F4F6] dark:hover:bg-[#262626] backdrop-blur-md transition font-sans"
         >
           Explore Our 12 Services
         </Link>

@@ -1,4 +1,5 @@
 import type { ServiceOffering } from "../../types/content";
+import { trackServiceInquiry, trackCtaClick } from "../../analytics";
 
 interface ServiceCardProps {
   service: ServiceOffering;
@@ -57,7 +58,20 @@ export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
       <div className="mt-6 pt-4 border-t border-[#E0E0E0] dark:border-[#2D2D2D]">
         <button
           type="button"
-          onClick={() => onCtaClick(service)}
+          onClick={() => {
+            trackServiceInquiry({
+              serviceId: service.id,
+              serviceName: service.name,
+              source: "service_card",
+            });
+            trackCtaClick({
+              ctaName: `service_inquiry_${service.id}`,
+              ctaLocation: "service_card",
+              ctaText: service.ctaLabel,
+              destinationUrl: "/get-a-quote",
+            });
+            onCtaClick(service);
+          }}
           className="w-full rounded-lg bg-[#161616] px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-[#5B47F5] dark:bg-[#262626] dark:hover:bg-[#5B47F5]"
         >
           {service.ctaLabel} →

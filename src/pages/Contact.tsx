@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { PageMeta } from "../components/layout/PageMeta";
 import { ConsentCheckbox } from "../components/forms/ConsentCheckbox";
 import { submitForm } from "../lib/submitForm";
+import {
+  trackFormStart,
+  trackLeadGeneration,
+  trackFormFailure,
+} from "../analytics";
 import type { ContactInquiry } from "../types/content";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -10,6 +15,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export default function Contact() {
   const location = useLocation();
   const contactContext = location.state as { serviceId?: string; subject?: string } | null;
+  const hasTrackedStart = useRef<boolean>(false);
   const [form, setForm] = useState<ContactInquiry>({
     name: "",
     email: "",
@@ -22,6 +28,13 @@ export default function Contact() {
   const [errors, setErrors] = useState<Partial<Record<keyof ContactInquiry, string>>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  function triggerFormStart() {
+    if (!hasTrackedStart.current) {
+      hasTrackedStart.current = true;
+      trackFormStart("contact_form", "Contact Us", "contact_inquiry");
+    }
+  }
 
   function validate(): boolean {
     const next: Partial<Record<keyof ContactInquiry, string>> = {};
@@ -39,6 +52,7 @@ export default function Contact() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    triggerFormStart();
     if (!validate()) return;
 
     setStatus("submitting");
@@ -46,9 +60,16 @@ export default function Contact() {
     const result = await submitForm({ formType: "contact", payload: form });
     if (result.ok) {
       setStatus("success");
+      trackLeadGeneration({
+        leadType: "contact_inquiry",
+        serviceId: form.serviceId,
+        contactMethod: "contact_form",
+      });
     } else {
       setStatus("error");
-      setSubmitError(result.error ?? "Submission failed. Please try again.");
+      const err = result.error ?? "Submission failed. Please try again.";
+      setSubmitError(err);
+      trackFormFailure("contact_form", err);
     }
   }
 
@@ -88,7 +109,21 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-bold text-[#161616] dark:text-[#F4F4F4]">Phone</p>
-                  <p>+91 92202 29272 / +91-120-4428444</p>
+                  <p className="space-x-1">
+                    <a
+                      href="tel:+919220229272"
+                      className="text-[#5B47F5] dark:text-[#7B74FF] hover:underline font-medium"
+                    >
+                      +91 92202 29272
+                    </a>
+                    <span>/</span>
+                    <a
+                      href="tel:+911204428444"
+                      className="text-[#5B47F5] dark:text-[#7B74FF] hover:underline font-medium"
+                    >
+                      +91-120-4428444
+                    </a>
+                  </p>
                 </div>
                 <div>
                   <p className="font-bold text-[#161616] dark:text-[#F4F4F4]">Deployment Modes</p>
@@ -107,6 +142,8 @@ export default function Contact() {
               </p>
               <a
                 href="/get-a-quote"
+                data-analytics-cta="launch_planner_contact_sidebar"
+                data-analytics-location="contact_page"
                 className="mt-3 inline-block text-xs font-bold text-[#5B47F5] dark:text-[#7B74FF] hover:underline"
               >
                 Launch Planner →

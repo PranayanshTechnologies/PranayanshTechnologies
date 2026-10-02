@@ -72,6 +72,9 @@ export function Navbar() {
           <ThemeToggle />
           <Link
             to="/get-a-quote"
+            data-analytics-cta="nav_get_quote"
+            data-analytics-location="navbar"
+            data-analytics-destination="/get-a-quote"
             className="inline-flex items-center justify-center rounded-lg bg-[#5B47F5] px-5 py-2.5 text-xs font-semibold text-white shadow-xs transition hover:bg-[#4634D6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#5B47F5]"
           >
             Get a Quote
@@ -121,6 +124,9 @@ export function Navbar() {
               <Link
                 to="/get-a-quote"
                 onClick={() => setOpen(false)}
+                data-analytics-cta="nav_mobile_get_quote"
+                data-analytics-location="navbar"
+                data-analytics-destination="/get-a-quote"
                 className="block w-full rounded-lg bg-[#5B47F5] px-5 py-3 text-center text-xs font-semibold text-white shadow-xs hover:bg-[#4634D6]"
               >
                 Get a Quote

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { quizQuestions, engagementModels } from "../../data/engagementModels";
+import { trackInteractiveTool, trackCtaClick } from "../../analytics";
 import type { QuizOption } from "../../types/content";
 
 export function EngagementModelQuiz() {
@@ -19,6 +20,10 @@ export function EngagementModelQuiz() {
       setCurrentStep((s) => s + 1);
     } else {
       setQuizFinished(true);
+      trackInteractiveTool({
+        toolName: "engagement_quiz",
+        action: "complete",
+      });
     }
   }
 
@@ -57,6 +62,13 @@ export function EngagementModelQuiz() {
   const question = quizQuestions[currentStep];
 
   function handleProceedToQuote() {
+    trackCtaClick({
+      ctaName: `quiz_proceed_${winningModel.id}`,
+      ctaLocation: "quiz",
+      ctaText: `Get a Custom Quote for ${winningModel.name}`,
+      destinationUrl: "/get-a-quote",
+    });
+
     navigate("/get-a-quote", {
       state: {
         serviceId: winningModel.id,
